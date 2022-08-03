@@ -125,7 +125,14 @@ window.addEventListener('load', getAllData);
 
 
 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~other~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function hide(element) {
+    element.classList.add('hidden');
+  }
+  
+  function show(element) {
+    element.classList.remove('hidden');
+  }
 
 let p = new Promise((resolve, reject) => {
     let a = 1 + 1
