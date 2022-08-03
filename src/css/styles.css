@@ -20,7 +20,13 @@ body {
   margin: 0px;
 }
 
-
+.main-container{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../hotel-eden/src/images/turing-logo.png');
+  margin: 0%;
+}
 
 
 
