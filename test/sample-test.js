@@ -6,9 +6,11 @@ const testBookingsData = testData.bookingsTestDataa;
 const testCustomerData = testData.customerTestData;
 const testRoomsData = testData.roomTestData;
 
+//using testing format
 
 describe('See if the tests are running', function() {
   it('should return true', function() {
     expect(true).to.equal(true);
   });
 });
+

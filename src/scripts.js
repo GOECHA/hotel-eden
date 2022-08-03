@@ -3,7 +3,6 @@
 
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/styles.css';
-
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import { getAllData } from './apiCalls';
@@ -16,7 +15,7 @@ console.log('Welcome to hotel-eden');
 
 
 
-// ~~~~~~~~~~~~~~~~~~~~~Global Variables~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~Query Selectors~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -38,6 +37,15 @@ window.addEventListener('load', getAllData);
 
 
 
+// ~~~~~~~~~~~~~~~~~~~~~Global Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+let customerData;
+let roomsData;
+let bookingData;
+let customer;
+let allRooms;
+let booking;
 
 
 
@@ -47,13 +55,17 @@ window.addEventListener('load', getAllData);
 
 
 
+// ~~~~~~~~~~~~~~~~~~~~~Functions~~~~~~~~~~~~~~~~~~~~~~
 
-
-
-
-
-
-
+getAllData().then(responses => {
+    customerData = responses[0];
+    roomsData = responses[1];
+    bookingData = responses[2];
+    // customer = new Customer(customerData[getRandomIndex(customerData)]);
+    // allRooms = roomsData.map(room => new Room(room, bookingData));
+    // booking =  new Booking (allRooms);
+    
+  });
 
 
 
