@@ -1,15 +1,36 @@
+
 *{
   border: 2px solid purple;
 }
 
-body {
+
+
+.body {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background: white;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../images/palm-leaves.avif");
+  margin: 0%;
+} 
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~text~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+h1{
+  display: flex;
+  align-items: center;
   margin: 0%;
 }
 
+
+
+
+/* ~~~~~~~~~~~~~~~~~~style containers~~~~~~~~~~~~~~~~~~~~~~ */
 
 .header-container {
   display: flex;
@@ -21,6 +42,28 @@ body {
 }
 
 
+.h1-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.main-containe { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.upper-wrapper,
+.lower-wrapper {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
 
 
 
@@ -32,3 +75,6 @@ body {
 .hidden {
   display: none;
 }
+
+
+
