@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../images/palm-leaves.avif");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
   margin: 0%;
 } 
 
@@ -64,7 +64,7 @@ h1{
   display: flex;
   height: 50%;
   width: 100%;
-  background-image: url("../hotel-eden/src/images/pool-side.png");
+  background-image: url("../images/pool-side.png");
   margin: 0%;
 }
 
