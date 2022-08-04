@@ -2,8 +2,11 @@
   border: 2px solid purple;
 }
 
+
+
 body {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   background: white;
@@ -11,21 +14,52 @@ body {
 }
 
 
-.header-container {
+.footer-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 50px;
   margin: 0px;
 }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Text~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.h1-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+
+h1{
+  display: flex;
+  margin: 0%
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../hotel-eden/src/images/turing-logo.png"); */
+  margin: 0%;
+}
 
 
+.main-container-upper-wrapper{
+  display: flex;
+  height: 50%;
+  width: 100%;
+  background-image: url("../hotel-eden/src/images/pool-side.png");
+  margin: 0%;
+}
 
-
-
-
-
+.main-container-lower-wrapper{
+  display: flex;
+  height: 50%;
+  width: 100%;
+  margin: 0%;
+}
 
 
 /* ~~~~~~~~~~~~~~~~~~aux~~~~~~~~~~~~~~~~~~~~~~ */
