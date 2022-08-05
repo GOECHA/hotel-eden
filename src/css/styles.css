@@ -1,10 +1,10 @@
 
-*{
-  border: 2px solid purple;
-}
+/* * {
+  border: 1px solid purple;
+} */
 
 
-html{
+html {
   height: 100vh;
   width: 100vw;
   margin: 0%;
@@ -17,19 +17,12 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../images/palm-leaves.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0%;
+  overflow-y: scroll;
 } 
 
-
-
-
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Text~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.h1-wrapper{
+.h1-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,33 +30,72 @@ body {
   height: 100%;
 }
 
-h1{
+h1 {
   display: flex;
   align-items: center;
   margin: 0%;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Style Containers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+h2 {
+  display: flex;
+  color: white;
+  margin: 0%;
+  margin-right: 1em;
+}
+
+p {
+  margin: 0%;
+}
+
+#four04Text,
+#uhOhText {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 40pt;
+  text-align: center;
+}
+#rainText,
+#cantFindText {
+  display: flex;
+  font-size: 30pt;
+  text-align: center;
+
+}
+
+#refreshText,
+#backHomeText,
+#trySearchText {
+  display: flex;
+  font-size: 20pt;
+  text-align: center;
+  padding-top: 1em;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Dashbaord Style Containers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 
-.main-container{
+.main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../images/palm-leaves.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0%;
+  overflow-y: scroll;
+   overflow-x: scroll;
 }
 
 
-.main-container-upper-wrapper{
+.main-container-upper-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* max-width:100%;
-  height:auto; */
+  justify-content: flex-end;
+  align-items: flex-end;
   height: 50%;
   width: 100%; 
   background-image: url("../images/infinity-pool.png");
@@ -73,11 +105,15 @@ h1{
   margin: 0%;
 }
 
-.main-container-lower-wrapper{
+.main-container-lower-wrapper {
   display: flex;
-  height: 50%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
   width: 100%;
   margin: 0%;
+  overflow-y: scroll;
 }
 
 
@@ -91,6 +127,152 @@ h1{
   background-color: rgba(	199,	249,	204, 0.3);
   margin: 0px;
 }
+
+
+.left-side-lower-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 40%;
+box-sizing: border-box;
+}
+
+.feature-image-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex-shrink: inherit;
+flex-grow: inherit;
+background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../images/stair-case.png");
+background-repeat: no-repeat;
+background-size: cover;
+filter: drop-shadow(2px 3px 3px grey);
+height: 340px;
+width: 355px;
+margin: .5em;
+background-position: 0cm;
+box-sizing: border-box;
+}
+
+.right-side-lower-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+.right-side-grid {
+    display: grid;
+    grid-template-columns: .33fr .33fr .33fr;
+    grid-template-rows:  33px 33px 33x;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+  .head-grid2,
+  .head-grid7,
+  .head-grid9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-trips-container,  
+  .past-trips-container,
+  .points-earned-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56, 163, 165, .3);
+    filter: drop-shadow(2px 3px 3px #C7F9CC);
+    height: 230px;
+    width: 230px;
+    margin: .5em;
+    box-sizing: border-box;
+  }
+
+  .new-trips-container{
+    margin-bottom: -100px;
+  }
+
+  .past-trips-container,
+  .points-earned-container {
+    margin-top: -100px;
+  }
+
+
+  #newTripsWrapper,  
+  #pastTripsWrapper,
+  #pointsEarnedWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254,	254,	254, .3);
+    height: 210px;
+    width: 210px;
+    box-sizing: border-box;
+     overflow-y: scroll;  
+  }
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Redirect Page Style Containers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+    .redirect-container {
+      display: grid;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../images/umbrella-404.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-template-columns: .33fr .33fr .33fr;
+      grid-template-rows:  50fr 30fr 20fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;width: 100%;
+      height:100%;
+      margin: 0%;
+    }
+
+    .redirect-grid2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #uhOh1,
+    .redirect-grid1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      margin-right: -50px;
+      margin-top: -30px;
+    }
+
+    #uhOh2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+
+
 
 /* ~~~~~~~~~~~~~~~~~~aux~~~~~~~~~~~~~~~~~~~~~~ */
 .hidden {
