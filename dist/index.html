@@ -8,7 +8,7 @@
      luxury | design | hearth </title>
 </head>
 <body>
-  <section class="main-container" id ="mainContainer">
+  <section class="main-container hidden" id ="mainContainer">
     <section class="main-container-upper-wrapper" id="mainContainerUpperWrapper">
       <nav class="menu-wrapper">
         <a class="nav-text" href="/login">Login</a>
@@ -61,7 +61,7 @@
   </section>
 </section>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
-  <section class="redirect-container hidden" id ="redirectContainer">
+  <section class="redirect-container" id ="redirectContainer">
     <article class="redirect-grid1">
       <div class="uh-oh" id="uhOh1">
         <p class="re-direct-text" id="uhOhText">Uh-Oh. . .</p>
@@ -70,14 +70,15 @@
     <article class="redirect-grid2">
       <div class="uh-oh" id="uhOh2">
         <p class="re-direct-text" id="four04Text">404</p>
-        <p class="re-direct-text" id="rainText">Rained Out</p>
-        <p class="re-direct-text" id="cantFindText">Cant find what you're looking for.</p>
+        <p class="re-direct-text" id="rainText">Rained Out?</p>
+        <p class="re-direct-text" id="cantFindText">No worries, we play in the rain too!</p>
       </div>
     </article>
     <article class="redirect-grid3"></article>
     <article class="redirect-grid4"></article>
     <article class="redirect-grid5">
       <div class="uh-oh" id="uhOh5">
+        <li class="re-direct-text" id="weHelpText">We're here to help!</li> 
         <li class="re-direct-text" id="refreshText">Try refreshing the page</li> 
         <li class="re-direct-text" id="backHomeText">Try going back to home</li>
         <li class="re-direct-text" id="trySearchText">Try searching for something else</li>

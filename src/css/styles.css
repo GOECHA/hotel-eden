@@ -54,13 +54,15 @@ p {
   color: white;
 }
 
-#four04Text,
+
 #uhOhText {
   display: flex;
   justify-content: flex-end;
-  font-size: 40pt;
+  flex-shrink: inherit;
+  font-size: 65pt;
   text-align: center;
 }
+
 #rainText,
 #cantFindText {
   display: flex;
@@ -87,6 +89,28 @@ p {
   color: white;
 
 }
+
+.re-direct-text{
+  display: flex;
+  color: rgb(34, 87, 122);
+  padding-top: .3em;
+  padding-left: 0%;
+}
+
+#weHelpText{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: 70px;
+ padding-left: 1.2em;
+}
+
+#refreshText,
+#backHomeText,
+#trySearchText{
+padding-left: 2em;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Dashbaord Style Containers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -271,7 +295,7 @@ box-sizing: border-box;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      grid-template-columns: .33fr .33fr .33fr;
+      grid-template-columns: .33fr .7fr .33fr;
       grid-template-rows:  50fr 30fr 20fr;
       grid-column-gap: 0px;
       grid-row-gap: 0px;
@@ -293,8 +317,9 @@ box-sizing: border-box;
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
-      margin-right: -50px;
-      margin-top: -30px;
+      font-size: 100pt;
+      margin-right: -70px;
+      padding-bottom: .7em;
     }
 
     #uhOh2 {
@@ -304,9 +329,14 @@ box-sizing: border-box;
       align-items: center;
       height: 100%;
       width: 100%;
+      padding-bottom: 1em;
     }
 
-
+    #four04Text{
+      font-size: 100pt;
+      padding-bottom: .2em;
+      padding-left: 0%;
+    }
 
 
 /* ~~~~~~~~~~~~~~~~~~aux~~~~~~~~~~~~~~~~~~~~~~ */
