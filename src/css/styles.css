@@ -102,7 +102,7 @@ p {
   justify-self: center;
   align-self: center;
   font-size: 70px;
- padding-left: 1.2em;
+  margin-left: -3.3em;
 }
 
 #refreshText,
@@ -309,6 +309,12 @@ box-sizing: border-box;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+    .redirect-grid5 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
 
     #uhOh1,
