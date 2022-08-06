@@ -7,7 +7,7 @@ const testBookingData = data.bookingsTestData;
 const testRoomData = data.roomTestData;
 
 
-describe('Customer', () => {
+describe('Room', () => {
     let room1;
     let room2;
     let room3;
