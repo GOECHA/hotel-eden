@@ -36,13 +36,17 @@ describe('Customer', () => {
         expect(customer3.name).to.equal('Kelvin Schiller');
         expect(customer4.name).to.equal('Kennedi Emard');
       });
-      it.skip('should have a record of pastBookings', () => {
-        expect(customer1.name).to.equal('Leatha Ullrich');
-        expect(customer2.name).to.equal('Rocio Schuster');
+      it.skip('should have a method to hold record of pastBookings', () => {
+        expect(customer1.pastBookings).to.equal('Leatha Ullrich');
+        expect(customer2.pastBookings).to.equal('Rocio Schuster');
       });
-      it.skip('should have a record of upcomingBookings', () => {
-        expect(customer1.name).to.equal('Leatha Ullrich');
-        expect(customer2.name).to.equal('Rocio Schuster');
+      it.skip('should have a method to hold record of upcomingBookings', () => {
+        expect(customer1.upcomingBookings).to.deep.equal('Leatha Ullrich');
+        expect(customer2.upcomingBookings).to.deep.equal('Rocio Schuster');
+      });
+      it.skip('should have a method to get total amount spent on bookings in dollars', () => {
+        expect(customer1.totalAmountSpent).to.equal('Leatha Ullrich');
+        expect(customer2.totalAmountSpent).to.equal('Rocio Schuster');
       });
 });
 
