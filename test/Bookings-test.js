@@ -1,8 +1,7 @@
 import { expect } from 'chai';
-// import Recipe from '../src/classes/Rooms-class.js';
 import Booking from '../src/classes/Bookings-class.js';
+import Room from '../src/Classes/Rooms-class.js';
 const data = require('../src/test-data/all-test-data.js');
-const testCustomerData = data.customerTestData;
 const testBookingData = data.bookingsTestData;
 const testRoomData = data.roomTestData;
 
@@ -12,12 +11,20 @@ describe('Booking', () => {
     let booking3;
     let booking2;
     let booking4;
+    let roomData1;
+    let roomData2;
+    let roomData3;
+    let roomData4;
 
     beforeEach(() => {
         booking1 = new Booking(testBookingData[0]);
         booking2 = new Booking(testBookingData[1]);
         booking3 = new Booking(testBookingData[2]);
         booking4 = new Booking(testBookingData[3]);
+        roomData1 = new Room(testRoomData[0]);
+        roomData2 = new Room(testRoomData[1]);
+        roomData3 = new Room(testRoomData[2]);
+        roomData4 = new Room(testRoomData[3])
     });
     it('should be a function', () => {
         expect(Booking).to.be.a('function');
@@ -46,4 +53,10 @@ describe('Booking', () => {
         expect(booking3.roomNumber).to.equal(12);
         expect(booking4.roomNumber).to.equal(7);
       });
+      it('should be able to get room details by room number on booking', () => {
+          booking1.getRoomData(roomData1);
+          expect(booking1.getRoomData).to.be.a.instanceOf(Room)
+          expect(booking1.getRoomData.roomNumber).to.equal(roomData1.roomNumber)
+        });
+
     });

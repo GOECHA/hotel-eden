@@ -1,35 +1,44 @@
-import Recipe from './Rooms-class';
-import Pantry from './Bookings-class';
+import Room from './Rooms-class';
 import Booking from './Bookings-class';
 
 class Customer {
     constructor(customerData, bookingData) {
       this.id = customerData.id;
       this.name = customerData.name;
+      this.bookingData = [];
       this.pastBookings = [];
       this.upcomingBookings = [];
-      this.totalAmountSpent = bookingData.totalAmountSpent
+      this.totalAmountSpent = 0;
+      // console.log(this.id)
     }
 
 
-    getBookings = () => {
-       // get total bookings for user 
-       //filter all the r
+    getCustomerBookings(bookings, rooms) {
+      this.bookingData = bookings.filter(booking => booking.userID === this.id)
+      this.bookingData.forEach(booking => {
+        booking.getRoomInfo(rooms)
+      })
     }
+     // allcustomer bookings I have an array of objects with booking info and a user ID
+     // I also have another array of objects with customer info
+     // The customer.id and the booking.userID
+     // what I want back are all the booking objects that include
+     // the customerID 
+     //
+     
 
-
-    pastBookingTotal = () => {
+    pastBookingTotal () {
         //get total past booking amount
-     let newBooking = new Booking()
+     
      
    }
 
-     upcomingBookingTotal = () => {
+     upcomingBookingTotal() {
         // get total booking amount
      }
 
 
-     calculateTotalAmountSpent = () => {
+     calculateTotalAmountSpent() {
          //thinking a reduce function here
      }
 
@@ -40,17 +49,6 @@ class Customer {
     // 4, should have a record of upcoming visits
     // 5, should have an update of total amount spent
 };
-
-
-
-
-
-
-
-
-
-
-
 
 
 
