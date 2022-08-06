@@ -1,6 +1,6 @@
 
-import Customer from './Customers-class';
-import Room from './Rooms-class';
+import Room from './Rooms-class.js'
+
 
 class Booking {
     constructor(bookingData){
@@ -8,6 +8,12 @@ class Booking {
         this.userID= bookingData.userID;
         this.date= bookingData.date;
         this.roomNumber= bookingData.roomNumber;
+        this.roomData;
+    }
+
+    getRoomData(rooms){
+        this.roomData = rooms.find(room => room.number === this.roomNumber)
+        this.roomData = new Room(room)
     }
 }
 

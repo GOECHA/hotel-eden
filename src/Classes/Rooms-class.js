@@ -1,7 +1,4 @@
 
-import Customer from './Customers-class';
-import Booking from './Bookings-class';
-
 class Room  {
     constructor(roomData){
       this.number = roomData.number;
@@ -12,17 +9,6 @@ class Room  {
       this.costPerNight = roomData.costPerNight;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
