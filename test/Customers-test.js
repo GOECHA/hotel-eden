@@ -37,6 +37,8 @@ describe('Customer', () => {
         expect(customer4.name).to.equal('Kennedi Emard');
       });
       it.skip('should have a method to hold record of pastBookings', () => {
+        
+
         expect(customer1.pastBookings).to.equal('Leatha Ullrich');
         expect(customer2.pastBookings).to.equal('Rocio Schuster');
       });

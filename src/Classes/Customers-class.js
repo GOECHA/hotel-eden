@@ -1,19 +1,37 @@
 import Recipe from './Rooms-class';
 import Pantry from './Bookings-class';
+import Booking from './Bookings-class';
 
 class Customer {
-    constructor(customerData, totalAmountSpent) {
+    constructor(customerData, bookingData) {
       this.id = customerData.id;
       this.name = customerData.name;
       this.pastBookings = [];
       this.upcomingBookings = [];
-      this.totalAmountSpent = totalAmountSpent
+      this.totalAmountSpent = bookingData.totalAmountSpent
     }
 
 
-  
+    getBookings = () => {
+       // get total bookings for user 
+       //filter all the r
+    }
 
 
+    pastBookingTotal = () => {
+        //get total past booking amount
+     let newBooking = new Booking()
+     
+   }
+
+     upcomingBookingTotal = () => {
+        // get total booking amount
+     }
+
+
+     calculateTotalAmountSpent = () => {
+         //thinking a reduce function here
+     }
 
     // possible functions:
     // 1, should be able to book a room with a selected date
