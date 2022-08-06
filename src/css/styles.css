@@ -194,7 +194,7 @@ box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(56, 163, 165, .3);
+    background-color: rgb(34, 87, 122 , .3);
     filter: drop-shadow(2px 3px 3px #C7F9CC);
     height: 230px;
     width: 230px;
