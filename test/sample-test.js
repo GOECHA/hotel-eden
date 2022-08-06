@@ -1,6 +1,6 @@
 import chai from 'chai';
 const expect = chai.expect;
-const testData = require('../src/test-data/all-terst-data.js');
+const testData = require('../src/test-data/all-test-data.js');
 
 const testBookingsData = testData.bookingsTestDataa;
 const testCustomerData = testData.customerTestData;
