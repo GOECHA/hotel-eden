@@ -1,10 +1,11 @@
 
 class Hotel {
-    constructor(bookingsInfo, roomsInfo, customerInfo){
-        this.bookings = [];
+    constructor( bookingsData, roomsData, customerData){
+        this.bookings = bookingsData.bookings;
         this.rooms = roomsData;
         this.customers = customerData;
-        this.availableRooms = [];
+        this.cuurentUser;
+        this.availableRooms;
     }
 
     findAvailableRooms(input){

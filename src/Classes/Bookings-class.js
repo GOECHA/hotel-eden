@@ -12,7 +12,9 @@ class Booking {
     }
 
     getRoomData(rooms){
+        // console.log(`booking class rooms)`, rooms)
         this.roomData = rooms.find(room => room.number === this.roomNumber)
+        // console.log(`this.roomData`, this.roomData)
     }
 };
 

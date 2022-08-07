@@ -28,6 +28,7 @@ describe('Customer', () => {
       allBookings = testBookingData.map((booking) => {
         return new Booking(booking)
       })
+    
         customer1 = new Customer(testCustomerData[0]);
         customer2 = new Customer(testCustomerData[1]);
         customer3 = new Customer(testCustomerData[2]);
@@ -36,7 +37,7 @@ describe('Customer', () => {
         booking2 = new Booking(testBookingData[1]);
         booking3 = new Booking(testBookingData[2]);
         booking4 = new Booking(testBookingData[3]);
-        // allBookings = [booking1, booking2, booking3, booking4]
+        // allBookings2 = [booking1, booking2, booking3, booking4]
         roomData1 = new Room(testRoomData[0]);
         roomData2 = new Room(testRoomData[1]);
         roomData3 = new Room(testRoomData[2]);
@@ -60,11 +61,8 @@ describe('Customer', () => {
         expect(customer4.name).to.equal('Kennedi Emard');
       });
       it('should be able to store bookings unique to the customer', () => {
-        customer1.getCustomerBookings(allBookings, roomData1)
-        // console.log(roomData1)
-        // console.log(`allBookings[0].id`, allBookings[0])
-        // console.log(`booking1.id`, booking1)
-        expect(customer1.allBookings[0].id).to.equal(booking1.id);
+        customer1.getCustomerBookings(allBookings, allRoomData)
+        expect(customer1.bookingData[0].id).to.equal(booking1.id);
       })
       it.skip('should have a method to hold record of pastBookings', () => {
         let customerBookings1 = customer1.getCustomerBookings(allBookings, roomData1)

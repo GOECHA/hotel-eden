@@ -14,11 +14,10 @@ class Customer {
 
     getCustomerBookings(bookings, rooms) {
       this.bookingData = bookings.filter(booking => booking.userID === this.id) 
-      this.bookingData.forEach(booking => {
-        console.log(`booking`,booking)
-        console.log(`booking.getRoomData(rooms)`,booking.getRoomData(rooms))
+      let bookingInfo = this.bookingData.forEach(booking => {
         booking.getRoomData(rooms)
       })
+      return bookingInfo
     }
     
      // allcustomer bookings I have an array of objects with booking info and a user ID
@@ -29,19 +28,19 @@ class Customer {
      //
      
 
-     pastBookingTotal (bookings) {
-        //get total past booking amount
-       let currentDate = newDate();
-        console.log(`currentDate`, currentDate)
-        console.log(222222, booking)
-       let pastTotal = bookings.filter(booking => {
-         if (booking < currentDate){
-          console.log(11111, booking)
-          return booking
-         }
-         return pastTotal
-        }) 
-     };
+    //  pastBookingTotal (bookings) {
+    //     //get total past booking amount
+    //    let currentDate = newDate();
+    //     console.log(`currentDate`, currentDate)
+    //     console.log(222222, booking)
+    //    let pastTotal = bookings.filter(booking => {
+    //      if (booking < currentDate){
+    //       console.log(11111, booking)
+    //       return booking
+    //      }
+    //      return pastTotal
+    //     }) 
+    //  };
 
      upcomingBookingTotal() {
         // get total booking amount
