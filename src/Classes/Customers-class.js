@@ -2,23 +2,25 @@ import Room from './Rooms-class';
 import Booking from './Bookings-class';
 
 class Customer {
-    constructor(customerData, bookingData) {
+    constructor(customerData) {
       this.id = customerData.id;
       this.name = customerData.name;
       this.bookingData = [];
       this.pastBookings = [];
       this.upcomingBookings = [];
       this.totalAmountSpent = 0;
-      // console.log(this.id)
     }
 
 
     getCustomerBookings(bookings, rooms) {
-      this.bookingData = bookings.filter(booking => booking.userID === this.id)
+      this.bookingData = bookings.filter(booking => booking.userID === this.id) 
       this.bookingData.forEach(booking => {
-        booking.getRoomInfo(rooms)
+        console.log(`booking`,booking)
+        console.log(`booking.getRoomData(rooms)`,booking.getRoomData(rooms))
+        booking.getRoomData(rooms)
       })
     }
+    
      // allcustomer bookings I have an array of objects with booking info and a user ID
      // I also have another array of objects with customer info
      // The customer.id and the booking.userID
@@ -27,11 +29,19 @@ class Customer {
      //
      
 
-    pastBookingTotal () {
+     pastBookingTotal (bookings) {
         //get total past booking amount
-     
-     
-   }
+       let currentDate = newDate();
+        console.log(`currentDate`, currentDate)
+        console.log(222222, booking)
+       let pastTotal = bookings.filter(booking => {
+         if (booking < currentDate){
+          console.log(11111, booking)
+          return booking
+         }
+         return pastTotal
+        }) 
+     };
 
      upcomingBookingTotal() {
         // get total booking amount

@@ -99,7 +99,7 @@ customerTestData = [
 
 roomTestData = [
   {
-    "number": 1,
+    "number": 15,
     "roomType": "residential suite",
     "bidet": true,
     "bedSize": "queen",
@@ -107,7 +107,7 @@ roomTestData = [
     "costPerNight": 358.4
   },
   {
-    "number": 2,
+    "number": 24,
     "roomType": "suite",
     "bidet": false,
     "bedSize": "full",
@@ -115,7 +115,7 @@ roomTestData = [
     "costPerNight": 477.38
   },
   {
-    "number": 3,
+    "number": 12,
     "roomType": "single room",
     "bidet": false,
     "bedSize": "king",
@@ -123,7 +123,7 @@ roomTestData = [
     "costPerNight": 491.14
   },
   {
-    "number": 4,
+    "number": 7,
     "roomType": "single room",
     "bidet": false,
     "bedSize": "queen",
@@ -131,7 +131,7 @@ roomTestData = [
     "costPerNight": 429.44
   },
   {
-    "number": 5,
+    "number": 15,
     "roomType": "single room",
     "bidet": true,
     "bedSize": "queen",

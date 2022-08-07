@@ -17,10 +17,10 @@ console.log('Welcome to hotel-eden');
 
 // ~~~~~~~~~~~~~~~~~~~~~Query Selectors~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
-
-
+const navText = document.querySelector(".menu-wrapper");
+const redirectContainer = document.querySelector(".redirect-container");
+const mainContainer = document.querySelector(".main-container")
+const redirectText = document.querySelector(".redirect-grid5")
 
 
 
@@ -31,8 +31,8 @@ console.log('Welcome to hotel-eden');
 // ~~~~~~~~~~~~~~~~~~~~~Event Listeners~~~~~~~~~~~~~~~~~~~~~~
 
 window.addEventListener('load', getAllData);
-
-
+navText.addEventListener('click', redirect);
+redirectText.addEventListener('click', backToHome);
 
 
 
@@ -69,9 +69,76 @@ getAllData().then(responses => {
 
 
 
+  function redirect(){
+   hide(mainContainer);
+   show(redirectContainer);
+  };
+
+  function backToHome(){
+   hide(redirectContainer);
+   show(mainContainer);
+  };
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~Possible redirect~~~~~~~~~~~~~~~~~~~~~~
+// const handleRedirect = () => {
+//   const navText = document.querySelector("nav-text");
+  
+// navText.addEventListener("click", function() {
+//   throw Error("Can't touch this button!");
+// });
+//   try {
+//     Block of code to try
+//   }
+//   catch(err) {
+//     Block of code to handle errors
+//   }
+// }
+
+
+// app.use(function(req, res, next){
+//   res.status(404);
+
+//   // respond with html page
+//   if (req.accepts('html')) {
+//     res.render('404', { url: req.url });
+//     return;
+//   }
+
+//   // respond with json
+//   if (req.accepts('json')) {
+//     res.send({ error: 'Not found' });
+//     return;
+//   }
+
+//   // default to plain-text. send()
+//   res.type('txt').send('Not found');
+// });
 
 
 
