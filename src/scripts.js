@@ -6,9 +6,14 @@ import './css/styles.css';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import { getAllData } from './apiCalls';
-// import RecipeRepository from './classes/RecipeRepository';
-// import Recipe from './classes/Recipe';
-// import User from './classes/User';
+const dayjs = require('dayjs')
+//import dayjs from 'dayjs' // ES 2015
+dayjs().format()
+
+// import Rooms from './classes/Rooms-class.js';
+// import Customer from './classes/Customers-class.js';
+// import Booking from './classes/Bookings-class.js';
+// import Hotel from './classes/Hotel-class.js';
 
 
 console.log('Welcome to hotel-eden');

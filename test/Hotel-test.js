@@ -8,6 +8,7 @@ const testCustomerData = data.customerTestData;
 const testBookingData = data.bookingsTestData;
 const testRoomData = data.roomTestData;
 
+
 describe('Hotel', () => {
    let customer;
    let booking;
@@ -19,11 +20,17 @@ describe('Hotel', () => {
         customer = new Customer(testCustomerData[0]);
 		booking = new Booking(testBookingData[0]);
 		room = new Room(testRoomData[0]);
-		hotel = new Hotel(bookingsData, roomsData, customerData);
+        hotel = new Hotel();
+		// hotel = new Hotel(bookingsData, roomsData, customerData);
     });
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
         expect(Hotel).to.be.a('function');
       });
+      it('should have a method to create a current date', () => {
+        let today = new Date();
+        hotel.date = `${today.getFullYear()}/${(today.getMonth()+1)}/${today.getDate()}`;
+        expect(hotel.getCurrentDate()).to.deep.equal(hotel.currentdate);
+     });
       it.skip('should store data with all roomsData', () => {
         expect(hotel.rooms).to.deep.equal(roomsData);
       });
@@ -32,5 +39,6 @@ describe('Hotel', () => {
       });
       it.skip('should store all bookingsData', () => {
 		expect(hotel.bookingsData[2].userID).to.equal(bookingsData[2].userID)
-	})
+	  });
+     
     });
