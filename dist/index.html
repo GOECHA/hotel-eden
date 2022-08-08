@@ -8,14 +8,14 @@
      luxury | design | hearth </title>
 </head>
 <body>
-  <section class="main-container hidden" id ="mainContainer">
+  <section class="main-container" id ="mainContainer">
     <section class="main-container-upper-wrapper" id="mainContainerUpperWrapper">
       <nav class="menu-wrapper">
-        <a class="nav-text" href="/login">Login</a>
+        <a class="nav-text" id="loginText">Login</a>
         <p>|</p>
-        <a class="nav-text" href="/signUp">Sign up</a>
+        <a class="nav-text" id="sign-up-text">Sign up</a>
         <p>|</p>
-        <a class="nav-text" href="/bookARoom">Book a Room</a>
+        <a class="nav-text" id ="book-room-text">Book a Room</a>
       </nav>
        <div class ="hotel-name-wrapper">  
          <h2 class="hotel-name-main" id="hotelNameMain">Hotel Eden</h2>
@@ -61,7 +61,7 @@
   </section>
 </section>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
-  <section class="redirect-container" id ="redirectContainer">
+  <section class="redirect-container hidden" id ="redirectContainer">
     <article class="redirect-grid1">
       <div class="uh-oh" id="uhOh1">
         <p class="re-direct-text" id="uhOhText">Uh-Oh. . .</p>

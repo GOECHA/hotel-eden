@@ -11,20 +11,25 @@ describe('Booking', () => {
     let booking3;
     let booking2;
     let booking4;
+    let allBookings;
     let roomData1;
     let roomData2;
     let roomData3;
     let roomData4;
+    let allRoomData;
 
     beforeEach(() => {
         booking1 = new Booking(testBookingData[0]);
         booking2 = new Booking(testBookingData[1]);
         booking3 = new Booking(testBookingData[2]);
         booking4 = new Booking(testBookingData[3]);
+        allBookings = [booking1, booking2, booking3, booking4]
         roomData1 = new Room(testRoomData[0]);
         roomData2 = new Room(testRoomData[1]);
         roomData3 = new Room(testRoomData[2]);
-        roomData4 = new Room(testRoomData[3])
+        roomData4 = new Room(testRoomData[3]);
+        allRoomData = [roomData1, roomData2, roomData3, roomData4];
+
     });
     it('should be a function', () => {
         expect(Booking).to.be.a('function');
@@ -54,9 +59,8 @@ describe('Booking', () => {
         expect(booking4.roomNumber).to.equal(7);
       });
       it('should be able to get room details by room number on booking', () => {
-          booking1.getRoomData(roomData1);
-          expect(booking1.getRoomData).to.be.a.instanceOf(Room)
-          expect(booking1.getRoomData.roomNumber).to.equal(roomData1.roomNumber)
+        booking1.getRoomData(allRoomData);
+        expect(booking1.roomData.roomNumber).to.equal(allRoomData.roomNumber)
         });
 
     });

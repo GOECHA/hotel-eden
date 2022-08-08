@@ -23,10 +23,10 @@ describe('Room', () => {
         expect(Room).to.be.a('function');
       });
       it('should have a roomNumber', () => {
-        expect(room1.number).to.equal(1);
-        expect(room2.number).to.equal(2);
-        expect(room3.number).to.equal(3);
-        expect(room4.number).to.equal(4);
+        expect(room1.number).to.equal(15);
+        expect(room2.number).to.equal(24);
+        expect(room3.number).to.equal(12);
+        expect(room4.number).to.equal(7);
       });
       it('should have a roomType', () => {
         expect(room1.roomType).to.equal('residential suite');

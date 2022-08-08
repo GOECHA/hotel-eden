@@ -13,9 +13,8 @@ class Booking {
 
     getRoomData(rooms){
         this.roomData = rooms.find(room => room.number === this.roomNumber)
-        this.roomData = new Room(room)
     }
-}
+};
 
 
 
