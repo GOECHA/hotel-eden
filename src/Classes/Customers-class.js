@@ -31,20 +31,28 @@ class Customer {
         return this.hotelInfo
      };
 
-
-     pastBookingTotal() {
+//change function name to be more semantic
+     allBookingTotal() {
         this.getHotelInfo().getCurrentDate()
         let today = this.hotelInfo.currentDate
-          let pastTotal = this.bookingData.filter(booking => {
-            if(parseInt(booking.date.charAt(3)) < parseInt(today.charAt(3))){
-              this.pastBookings.push(booking)
-              return booking
-            }       
-            return booking   
-           }) 
-           console.log(`pastTotal44444`, pastTotal)
-          return pastTotal
-     };
+        let datesTotal = this.bookingData.sort((a, b) => {
+            return a.date - b.date
+        })
+        let pastDatesTotal = datesTotal.filter(date => {
+          if(date.date < today){
+            this.pastBookings.push(date)
+          } else {
+            this.upcomingBookings.push(date)
+          }
+          return date
+        })
+        console.log(`this.pastBookings`, this.pastBookings)
+        console.log(`this.upcomingBookings`, this.upcomingBookings)
+        console.log(`pastDatesTotal11111`,pastDatesTotal)
+        return pastDatesTotal
+        };
+
+
 
       calculatePastAmountSpent(booking){
         this.pointsEarned = this.pastBookingTotal(booking).reduce((acc, cur) => {
@@ -55,23 +63,8 @@ class Customer {
         return this.pointsEarned
       };
 
-     upcomingBookingTotal() {
-        this.getHotelInfo().getCurrentDate()
-        let today = this.hotelInfo.currentDate
-        let futureTotal = this.bookingData.filter(booking => {
-         if (parseInt(booking.date.charAt(3)) > parseInt(today.charAt(3))){
-          this.upcomingBookings.push(booking)
-         } 
-        //  console.log(`booking`, booking)
-         return booking
-        }) 
-        console.log(`futureTotal`, futureTotal)
-        console.log(`this.upcomingBookings`, this.upcomingBookings)
-
-        return futureTotal
-     };
-
-    
+ 
+ 
 
       calculateFutureTripBalance(bookings){
         console.log(`bookings`, bookings)
