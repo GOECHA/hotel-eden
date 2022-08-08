@@ -137,7 +137,7 @@ roomTestData = [
     "costPerNight": 429.44
   },
   {
-    "number": 15,
+    "number": 14,
     "roomType": "single room",
     "bidet": true,
     "bedSize": "queen",
@@ -145,7 +145,7 @@ roomTestData = [
     "costPerNight": 340.17
   },
   {
-    "number": 6,
+    "number": 5,
     "roomType": "junior suite",
     "bidet": true,
     "bedSize": "queen",

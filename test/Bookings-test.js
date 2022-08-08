@@ -11,7 +11,7 @@ describe('Booking', () => {
     let booking3;
     let booking2;
     let booking4;
-    let allBookings
+    let allBookings;
     let roomData1;
     let roomData2;
     let roomData3;

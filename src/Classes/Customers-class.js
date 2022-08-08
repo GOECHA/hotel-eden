@@ -38,15 +38,18 @@ class Customer {
           let pastTotal = this.bookingData.filter(booking => {
             if(parseInt(booking.date.charAt(3)) < parseInt(today.charAt(3))){
               this.pastBookings.push(booking)
-            }
-           return booking
+              return booking
+            }       
+            return booking   
            }) 
+           console.log(`pastTotal44444`, pastTotal)
           return pastTotal
      };
 
       calculatePastAmountSpent(booking){
-        this.pointsEarned = this.pastBookingTotal(booking).reduce((acc , cur) => {
+        this.pointsEarned = this.pastBookingTotal(booking).reduce((acc, cur) => {
           acc += cur.roomData.costPerNight
+          console.log(`acc33333`, acc)
           return acc
         }, 0);
         return this.pointsEarned
@@ -58,11 +61,13 @@ class Customer {
         let futureTotal = this.bookingData.filter(booking => {
          if (parseInt(booking.date.charAt(3)) > parseInt(today.charAt(3))){
           this.upcomingBookings.push(booking)
-         } else {
-          return ``
-         }
+         } 
+        //  console.log(`booking`, booking)
          return booking
         }) 
+        console.log(`futureTotal`, futureTotal)
+        console.log(`this.upcomingBookings`, this.upcomingBookings)
+
         return futureTotal
      };
 
@@ -84,7 +89,7 @@ class Customer {
        console.log(`pastBookingTotal()`, this.pastBookingTotal(bookings))
        this.totalAmountSpent += calculatePastAmountSpent(bookings) + calculateFutureTripBalance(bookings)
        return this.totalAmountSpeant
-     }
+     };
 
      
 };
