@@ -27,6 +27,7 @@ describe('Customer', () => {
     let roomData4;
     let roomData5;
     let roomData6;
+    let roomData7;
     let allRoomData;
     let hotelInfo;
 
@@ -45,13 +46,13 @@ describe('Customer', () => {
         booking3 = new Booking(testBookingData[2]);
         booking4 = new Booking(testBookingData[3]);
         booking6 = new Booking(testBookingData[5]);
-        // allBookings2 = [booking1, booking2, booking3, booking4]
         roomData1 = new Room(testRoomData[0]);
         roomData2 = new Room(testRoomData[1]);
         roomData3 = new Room(testRoomData[2]);
         roomData4 = new Room(testRoomData[3]);
-        roomData5 = new Room(testRoomData[5]);
-        roomData6 = new Room(testRoomData[6]);
+        roomData5 = new Room(testRoomData[4]);
+        roomData6 = new Room(testRoomData[5]);
+        roomData7 = new Room(testRoomData[6]);
         allRoomData = [roomData1, roomData2, roomData3, roomData4, roomData5, roomData6];
         
     });
@@ -78,16 +79,17 @@ describe('Customer', () => {
         expect(customer1.bookingData[0].id).to.equal(booking1.id);
         expect(customer5.bookingData[0].id).to.equal(booking6.id);
       })
-      it.skip('should have a method to get hotel Info', () => {
+      it('should have a method to get hotel Info', () => {
        let hotelInfo = new Hotel()
         expect(customer1.getHotelInfo()).to.deep.equal(hotelInfo);
         expect(customer5.getHotelInfo()).to.deep.equal(hotelInfo);
       });
-      it.only('should have a method to hold record of pastBookings', () => {
-        customer1.getCustomerBookings(allBookings, allRoomData)
-        customer5.getCustomerBookings(allBookings, allRoomData)
-
-        expect(customer1.allBookingTotal(allBookings)).to.deep.equal([
+      it('should have a method to filter previous booking dates', () => {
+        customer1.getCustomerBookings(allBookings, allRoomData);
+        customer5.getCustomerBookings(allBookings, allRoomData);
+        customer1.allBookingsTotal(allBookings);
+        customer5.allBookingsTotal(allBookings);
+        expect(customer1.pastBookings).to.deep.equal([
           {
             id: '5fwrgu4i7k55hl6sz',
             userID: 1,
@@ -131,72 +133,78 @@ describe('Customer', () => {
             }
           }
         ]);
-        expect(customer5.allBookingTotal(allBookings)).to.deep.equal([
+        expect(customer5.pastBookings).to.deep.equal([
          {
           id: '5fwrgu4i7k55hl6tb',
           userID: 5,
           date: '2022/02/06',
           roomNumber: 5,
-          roomData: undefined
+          roomData: {
+            number: 5,
+            roomType: 'junior suite',
+            bidet: true,
+            bedSize: 'queen',
+            numBeds: 1,
+            costPerNight: 397.02
+          }
         }]);
       });
-      it.only('should have a method to get total amount spent on past bookings', () => {
+      it('should have a method to filter future booking dates', () => {
         customer1.getCustomerBookings(allBookings, allRoomData);
-        customer1.pastBookingTotal();
-        customer2.getCustomerBookings(allBookings, allRoomData);
-        customer2.pastBookingTotal();
         customer5.getCustomerBookings(allBookings, allRoomData);
-        customer5.pastBookingTotal();
- 
- 
-         expect(customer1.calculatePastAmountSpent()).to.equal(1278.98)
-         expect(customer1.pointsEarned).to.equal(1278.98);
-         expect(customer2.calculatePastAmountSpent()).to.equal(477.38)
-         expect(customer2.pointsEarned).to.equal(477.38);
-         expect(customer5.calculatePastAmountSpent()).to.equal(477.38)
-         expect(customer5.pointsEarned).to.equal(477.38);
-       });
-      it.skip('should have a method to hold record of upcomingBookings', () => {
-        customer5.getCustomerBookings(allBookings, allRoomData);
-        console.log(`customer5.getCustomerBookings(allBookings, allRoomData)`, customer5.getCustomerBookings(allBookings, allRoomData))
-
-
-        expect(customer5.upcomingBookingTotal(allBookings)).to.deep.equal([
-           {
-            id: '5fwrgu4i7k55hl6t9',
-            userID: 5,
-            date: '2023/12/14',
-            roomNumber: 14,
-            roomData: undefined
+        customer1.allBookingsTotal(allBookings);
+        customer5.allBookingsTotal(allBookings);
+     
+        expect(customer1.upcomingBookings).to.deep.equal([]);
+        expect(customer5.upcomingBookings).to.deep.equal([{
+          id: '5fwrgu4i7k55hl6t9',
+          userID: 5,
+          date: '2023/12/14',
+          roomNumber: 14,
+          roomData: {
+            number: 14,
+            roomType: 'single room',
+            bidet: true,
+            bedSize: 'queen',
+            numBeds: 2,
+            costPerNight: 340.17
           }
-        ]);
-        expect(customer5.upcomingBookings).to.deep.equal([
-          {
-           id: '5fwrgu4i7k55hl6t9',
-           userID: 5,
-           date: '2023/12/14',
-           roomNumber: 14,
-           roomData: undefined
-         }
-       ]);
-      });
-      it.skip('should have a method to get total amount of future booking balance', () => {
-         console.log(customer5)
-         customer5.getCustomerBookings(allBookings, allRoomData);
-         customer5.upComingBookingTotal();
-         expect(customer5.calculateFutureTripBalance(allBookings)).to.equal(400);
-         expect(customer5.futureBalance).to.equal(400);
-       });
-       it.skip('should have a method to get total amount spent on bookings in dollars', () => {
-        
+          }]);
+        });   
+        it('should have a method to get total amount spent on past bookings in points -- 1 point = 1USD', () => { 
+          customer1.getCustomerBookings(allBookings, allRoomData);
+          customer1.allBookingsTotal();
+          customer1.calculatePointsEarned(allBookings);
+          customer5.getCustomerBookings(allBookings, allRoomData);
+          customer5.allBookingsTotal();
+          customer5.calculatePointsEarned(allBookings);
+          
+           expect(customer1.pointsEarned).to.equal(1278.98);
+           expect(customer5.pointsEarned).to.equal(397.02);
+        });
+        it('should have a method to get total future booking balance in dollars', () => { 
+          customer1.getCustomerBookings(allBookings, allRoomData);
+          customer1.allBookingsTotal();
+          customer1.calculateFutureBalance(allBookings);
+          customer5.getCustomerBookings(allBookings, allRoomData);
+          customer5.allBookingsTotal();
+          customer5.calculateFutureBalance(allBookings);
+         
+   
+           expect(customer1.futureBalance).to.equal(0);
+           expect(customer5.futureBalance).to.equal(340.17);
+        });
+       it('should have a method to get total amount spent on bookings in dollars', () => { 
          customer1.getCustomerBookings(allBookings, allRoomData);
-         customer2.getCustomerBookings(allBookings, allRoomData);
+         customer1.allBookingsTotal();
+         customer1.calculateTotalAmountSpent(allBookings);
+         customer5.getCustomerBookings(allBookings, allRoomData);
+         customer5.allBookingsTotal();
+         customer5.calculateTotalAmountSpent(allBookings);
         
- 
-          expect(customer1.calculateTotalAmountSpent(allBookings)).to.equal(400);
-          expect(customer1.totalAmountSpent).to.equal(400);
-          expect(customer2.calculateTotalAmountSpent(allBookings)).to.equal(300);
-          expect(customer2.totalAmountSpent).to.equal(300);
+        
+          expect(customer1.totalAmountSpent).to.equal(1278.98);
+          expect(customer5.totalAmountSpent).to.equal(737.19);
        });
 });
 

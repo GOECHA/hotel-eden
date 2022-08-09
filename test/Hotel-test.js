@@ -18,8 +18,8 @@ describe('Hotel', () => {
 
     beforeEach(() => {
         customer = new Customer(testCustomerData[0]);
-		booking = new Booking(testBookingData[0]);
-		room = new Room(testRoomData[0]);
+		    booking = new Booking(testBookingData[0]);
+		    room = new Room(testRoomData[0]);
         hotel = new Hotel();
 		// hotel = new Hotel(bookingsData, roomsData, customerData);
     });

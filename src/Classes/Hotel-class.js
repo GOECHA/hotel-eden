@@ -8,9 +8,9 @@ let now = dayjs()
 class Hotel {
     constructor(currentDate){
         this.currentDate = currentDate
-        // this.bookings = bookingsData.bookings;
         // this.rooms = roomsData;
         // this.customers = customerData;
+        // this.bookings = bookingsData.bookings;
         // this.curentUser;
         // this.availableRooms;
     }
