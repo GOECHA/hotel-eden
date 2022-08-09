@@ -23,7 +23,7 @@ class Customer {
       this.bookingData = bookings.filter(booking => booking.userID === this.id) 
       let bookingInfo = this.bookingData.forEach(booking => {
        return booking.getRoomData(rooms)
-      })
+      });
       return bookingInfo
     };
     

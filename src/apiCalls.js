@@ -1,17 +1,17 @@
-const fetchAllData = (dataType) => {
+function fetchAllData (dataType) {
     return fetch(`http://localhost:3001/api/v1/${dataType}`)
     .then(response => response.json())
-    .then(data => console.log(data))
     .catch(error => console.log(`API error: ${error.message}`));
   }
 
-const getAllData = () => {
-  const result = Promise.all([fetchAllData('customers'), fetchAllData('rooms'), fetchAllData('bookings')])
-    .then(responses => {
-      return responses;
-    })
-    return result;
-  }
+
+
+
+  let getAllData = Promise.all([fetchAllData('customers'), fetchAllData('rooms'), fetchAllData('bookings')])
+   
+ 
+  
+  
 
  
 export { getAllData }
