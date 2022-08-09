@@ -6,6 +6,7 @@ import './css/styles.css';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 
 import { getAllData } from './apiCalls';
+import { Datepicker } from 'vanillajs-datepicker';
 // const dayjs = require('dayjs')
 //import dayjs from 'dayjs' // ES 2015
 // dayjs().format()
@@ -36,9 +37,8 @@ const bookARoomPage = document.querySelector(".book-a-room-main-container");
 const toHomeFromBook = document.querySelector(".home-text-book-room");
 const toLoginFromBook = document.querySelector(".login-text-book-room");
 const searchCalendar = document.querySelector(".search-calendar");
-const calendar = document.querySelector(".calendar");
 const signInBtn = document.querySelector(".loginBtn");
-
+const calendar = document.querySelector('input[name="calendar-text"]');
 
 // ~~~~~~~~~~~~~~~~~~~~~Event Listeners~~~~~~~~~~~~~~~~~~~~~~
 

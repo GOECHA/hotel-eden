@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css">
   <title>hotel eden                               |
      luxury | design | hearth </title>
 </head>
@@ -26,24 +27,24 @@
         <section class ="feature-image-container" id ="featureImageContainer"></section>
       </section>
       <section class ="right-side-lower-wrapper" id="rightSideLowerWrapper">
-        <section class="right-side-grid" id="rigthSideGrid">
-          <article class="b-head-grid1"></article>
-          <article class="b-head-grid2">
+        <section class="right-side-grid" id="rightSideGrid">
+          <article class="head-grid1"></article>
+          <article class="head-grid2">
             <div class="new-trips-container" id="newTripsContainer">
               <div class="new-trips-wrapper" id="newTripsWrapper" ></div>
             </div>
           </article>
-          <article class="b-head-grid3"></article>
-          <article class="b-head-grid4"></article>
-          <article class="b-head-grid5"></article>
-          <article class="b-head-grid6"></article>
-          <article class="b-head-grid7">
+          <article class="head-grid3"></article>
+          <article class="head-grid4"></article>
+          <article class="head-grid5"></article>
+          <article class="head-grid6"></article>
+          <article class="head-grid7">
             <div class="points-earned-container" id="pointsEarnedContainer">
               <div class="points-earned-wrapper" id="pointsEarnedWrapper"></div>
             </div>
           </article>
-          <article class="b-head-grid8"></article>
-          <article class="b-head-grid9">
+          <article class="head-grid8"></article>
+          <article class="head-grid9">
             <div class="past-trips-container" id="pastTripsContainer">
               <div class="past-trips-wrapper" id="pastTripsWrapper"></div>
             </div>
@@ -116,25 +117,24 @@
          </div>
       </section>
       <section class="book-a-room-main-container-lower-wrapper" id="mainContainerLowerWrapper">
-        <section class ="book-a-room-left-side-lower-wrapper" id="rightSideLowerWrapper">
-          <section class="book-a-room-left-side-grid" id="rigthSideGrid">
+        <section class ="book-a-room-left-side-lower-wrapper" id="leftSideLowerWrapper">
+          <section class="book-a-room-left-side-grid" id="leftSideGrid">
             <article class="book-a-room-head-grid1"></article>
-            <article class="head-grid2">
+            <article class="b-head-grid2">
             </article>
-            <article class="head-grid3"></article>
-            <article class="head-grid4"></article>
-            <article class="head-grid5">
-              <input class=“calendar” type=“date” min=“2022/08/09” value=“” />
-              <button class="search-calendar-btn" type="button">search</button>
-              <!-- <section class="room-types"></section> -->
+            <article class="b-head-grid3"></article>
+            <article class="b-head-grid4"></article>
+            <article class="b-head-grid5">
             </article>
-            <article class="head-grid6"></article>
-            <article class="head-grid7"></article>
-            <article class="head-grid8"></article>
-            <article class="head-grid9"></article>
+            <article class="b-head-grid6"></article>
+            <article class="b-head-grid7"></article>
+            <article class="b-head-grid8"></article>
+            <article class="b-head-grid9"></article>
           </section>
         </section>
-        <section class ="book-a-room-right-side-lower-wrapper" id="leftSideLowerWrapper">
+        <section class ="book-a-room-right-side-lower-wrapper" id="rightSideLowerWrapper">
+          <input type="date" name="calendar-text">
+              <button class="search-calendar-btn" type="button">search</button>
           <section class ="book-a-room-feature-image-container" id ="featureImageContainer"></section>
         </section>
       </section>
@@ -155,6 +155,7 @@
   </section>
 </body>
 <script src="bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
 </html>
 
 <!-- import img from './image.png'; -->
