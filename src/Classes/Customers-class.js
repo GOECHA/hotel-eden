@@ -13,7 +13,9 @@ class Customer {
       this.pointsEarned = 0;
       this.futureBalance = 0;
       this.totalAmountSpent = 0;
+      this.userName = `customer${this.id}`
       this.hotelInfo;
+      //password overlook2021
     };
 
 
@@ -72,7 +74,7 @@ class Customer {
         }, 0)
         return this.totalAmountSpeant
       };     
-      
+
 };
 
 

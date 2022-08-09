@@ -115,7 +115,41 @@ describe('Hotel', () => {
             numBeds: 2,
             costPerNight: 340.17
           }
-        ]);
-        
+        ]);  
     });
-  });
+    it('should filter rooms by roomType', () => {
+
+      expect(hotelInfo.filterRoomsByType('residential suite')).to.deep.equal([
+        {
+        number: 15,
+        roomType: 'residential suite',
+        bidet: true,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 358.4
+      }
+     ])
+    });
+    it('should find a customer from a unique userName', () => {
+
+      expect(hotelInfo.findCurrentUser('customer5')).to.deep.equal(
+        {
+          id: 5,
+          name: 'Rhiannon Little',
+          bookingData: [],
+          pastBookings: [],
+          upcomingBookings: [],
+          pointsEarned: 0,
+          futureBalance: 0,
+          totalAmountSpent: 0,
+          userName: 'customer5'
+        }
+      )
+    });
+    it('should validate a customer userName', () => {
+       
+      expect(hotelInfo.checkValidLoginData('customer5', 'overlook2021')).to.equal(true)
+      expect(hotelInfo.checkValidLoginData('customer71', 'overlook2021')).to.equal(false)
+      expect(hotelInfo.checkValidLoginData('customer5', 'underlook2031')).to.equal(false)
+ })
+   });
