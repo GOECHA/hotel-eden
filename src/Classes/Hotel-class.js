@@ -1,18 +1,21 @@
 import Booking from './Bookings-class'
 import Customer from './Customers-class'
+import Room from './Rooms-class'
 import dayjs from 'dayjs';
 
 let now = dayjs()
 
 
 class Hotel {
-    constructor(currentDate){
-        this.currentDate = currentDate
-        // this.bookings = bookingsData.bookings;
-        // this.rooms = roomsData;
-        // this.customers = customerData;
-        // this.curentUser;
-        // this.availableRooms;
+    constructor(currentDate, roomData, bookingData, customerData){
+        this.currentDate = currentDate;
+        this.rooms = roomData;
+        this.bookings = bookingData;
+        this.customers = customerData;
+        this.availableRooms = [];
+        this.currentUser;
+       
+
     }
 
     getCurrentDate(){
@@ -23,30 +26,47 @@ class Hotel {
         this.currentDate = `${year}/${month}/${day}`;
       }
 
-
-    findAvailableRooms(){
-
+     
+    findAvailableRooms(date){
+       let bookedRooms = this.bookings.filter(booking => booking.date === date);
+       const isAvailable = (room) => { 
+        return bookedRooms.reduce((acc, cur) => {
+           if(cur.roomNumber === room.number){
+                acc = false;
+           } 
+           return acc
+        }, true)
+       }
+      this.availableRooms = this.rooms.filter(room => isAvailable(room))
+       return this.availableRooms
     }
 
 
-    filterRoomsByType(){
-        
+    filterRoomsByType(roomType){
+        let roomSelected = this.rooms.filter(room => room.roomType  === roomType);
+        return roomSelected
     }
 
+    findCurrentUser(userName){
+       let customerUserName = userName.split('customer')
+       console.log(`customerId`, customerUserName[1])
+       let customerId = this.customers.find(customer => customer.id === parseInt(customerUserName[1]))
+       console.log(`customerId`, customerId)
+       return customerId
+    }
 
+    checkValidLoginData(login, password){
+        let match = this.findCurrentUser(login) || 'noMatch' 
+        console.log(`match.userName`, match.userName)
+        if (login === match.userName && password === 'overlook2021'){
+            return true
+        } else {
+            return false
+        }
+    }
+ 
 
-  
-
-}
-
-
-
-
-
-
-
-
-
+};
 
 
 
@@ -58,13 +78,3 @@ export default Hotel;
 
 
 
-// class Hotel {
-//     constructor( bookingsData, roomsData, customerData){
-//         this.date = 
-//         this.bookings = bookingsData.bookings;
-//         this.rooms = roomsData;
-//         this.customers = customerData;
-//         this.curentUser;
-//         this.availableRooms;
-//     }
-// }

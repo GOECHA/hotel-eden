@@ -13,7 +13,9 @@ class Customer {
       this.pointsEarned = 0;
       this.futureBalance = 0;
       this.totalAmountSpent = 0;
+      this.userName = `customer${this.id}`
       this.hotelInfo;
+      //password overlook2021
     };
 
 
@@ -32,66 +34,47 @@ class Customer {
      };
 
 
-     pastBookingTotal() {
+     allBookingsTotal() {
         this.getHotelInfo().getCurrentDate()
         let today = this.hotelInfo.currentDate
-          let pastTotal = this.bookingData.filter(booking => {
-            if(parseInt(booking.date.charAt(3)) < parseInt(today.charAt(3))){
-              this.pastBookings.push(booking)
-              return booking
-            }       
-            return booking   
-           }) 
-           console.log(`pastTotal44444`, pastTotal)
-          return pastTotal
-     };
+        let datesTotal = this.bookingData.sort((a, b) => {
+            return a.date - b.date
+        })
+        let filterAllBookings = datesTotal.filter(date => {
+          if(date.date < today){
+            this.pastBookings.push(date)
+          } else if (date.date >= today) {
+            this.upcomingBookings.push(date)
+          }
+          return date
+        })
+        return filterAllBookings
+        };
 
-      calculatePastAmountSpent(booking){
-        this.pointsEarned = this.pastBookingTotal(booking).reduce((acc, cur) => {
-          acc += cur.roomData.costPerNight
-          console.log(`acc33333`, acc)
+      calculatePointsEarned(){
+        this.pointsEarned = this.pastBookings.reduce((acc, booking) => {  
+          acc += booking.roomData.costPerNight
           return acc
-        }, 0);
+        }, 0)
         return this.pointsEarned
-      };
+      }
 
-     upcomingBookingTotal() {
-        this.getHotelInfo().getCurrentDate()
-        let today = this.hotelInfo.currentDate
-        let futureTotal = this.bookingData.filter(booking => {
-         if (parseInt(booking.date.charAt(3)) > parseInt(today.charAt(3))){
-          this.upcomingBookings.push(booking)
-         } 
-        //  console.log(`booking`, booking)
-         return booking
-        }) 
-        console.log(`futureTotal`, futureTotal)
-        console.log(`this.upcomingBookings`, this.upcomingBookings)
+      calculateFutureBalance(){
+        this.futureBalance = this.upcomingBookings.reduce((acc, booking) => {  
+          acc += booking.roomData.costPerNight
+          return acc  
+        }, 0)
+        return this.futureBalance
+      }
 
-        return futureTotal
-     };
+      calculateTotalAmountSpent() {
+        this.totalAmountSpent = this.bookingData.reduce((acc, booking) => {  
+          acc += booking.roomData.costPerNight
+          return acc
+        }, 0)
+        return this.totalAmountSpeant
+      };     
 
-    
-
-      calculateFutureTripBalance(bookings){
-        console.log(`bookings`, bookings)
-        console.log(`upComingBookingTotal(bookings)`, upComingBookingTotal(bookings))
-        this.futureBalance = upComingBookingTotal(bookings).reduce((acc , cur) => {
-          console.log(`cur2`, cur) 
-            acc += cur.roomData.costPerNight
-          console.log(1234567, acc)
-            return acc
-      }, 0);
-      return this.futureBalance
-      };
-
-     calculateTotalAmountSpent(bookings) {
-       console.log(`pastBookingTotal()`, this.pastBookingTotal(bookings))
-       this.totalAmountSpent += calculatePastAmountSpent(bookings) + calculateFutureTripBalance(bookings)
-       return this.totalAmountSpeant
-     };
-
-     
 };
 
 

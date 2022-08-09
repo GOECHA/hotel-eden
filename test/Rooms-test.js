@@ -1,9 +1,6 @@
 import { expect } from 'chai';
-// import Recipe from '../src/classes/Rooms-class.js';
 import Room from '../src/classes/Rooms-class.js';
 const data = require('../src/test-data/all-test-data.js');
-const testCustomerData = data.customerTestData;
-const testBookingData = data.bookingsTestData;
 const testRoomData = data.roomTestData;
 
 
