@@ -11,11 +11,11 @@
   <section class="main-container" id ="mainContainer">
     <section class="main-container-upper-wrapper" id="mainContainerUpperWrapper">
       <nav class="menu-wrapper">
-        <a class="nav-text" id="loginText">Login</a>
+        <button tabIndex = "0" class="login-text" id="loginText">Login</button>
         <p>|</p>
-        <a class="nav-text" id="sign-up-text">Sign up</a>
+        <button tabIndex = "0" class="sign-up-text" id="signUpText">Sign up</button>
         <p>|</p>
-        <a class="nav-text" id ="book-room-text">Book a Room</a>
+        <button tabIndex = "0" class="book-room-text" id ="bookRoomText">Book a Room</button>
       </nav>
        <div class ="hotel-name-wrapper">  
          <h2 class="hotel-name-main" id="hotelNameMain">Hotel Eden</h2>
@@ -51,14 +51,6 @@
         </section>
       </section>
     </section>
-  <section class="footer-container" id ="footerContainer">
-    <section class="footer-logo-container"> </section>
-    <section class="h1-wrapper">
-      <h1>hotel eden</h1> <!--or logo  -->
-    </section>
-    <section class ="footer-icons-container">
-    </section>
-  </section>
 </section>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <section class="redirect-container hidden" id ="redirectContainer">
@@ -79,15 +71,50 @@
     <article class="redirect-grid5">
       <div class="uh-oh" id="uhOh5">
         <li class="re-direct-text" id="weHelpText">We're here to help!</li> 
-        <li class="re-direct-text" id="refreshText">Try refreshing the page</li> 
-        <li class="re-direct-text" id="backHomeText">Try going back to home</li>
-        <li class="re-direct-text" id="trySearchText">Try searching for something else</li>
+        <button class="re-direct-text" id="refreshText">Try refreshing the page</button> 
+        <button tabIndex = "0" class="re-direct-text" id="backHomeText">Try going back to home</button>
+        <button class="re-direct-text" id="trySearchText">Try searching for something else</button>
       </div>
     </article>
     <article class="redirect-grid6"></article>
     <article class="redirect-grid7"></article>
     <article class="redirect-grid8"></article>
     <article class="redirect-grid9"></article>
+  </section>
+  <section class="login-page hidden" id="loginPage">
+    <div class="login-wrapper" id="loginWrapper">
+      <div class='pcon'>
+          <h2>Welcome! Please login.</h2>
+          <form>
+          <div class='inputs'>
+              <h3>Username</h3>
+              <input type='text' class='textfield' id='un' required></input>
+              <h3 tabIndex = "0" class='forgot' id='fun'>Forgot username</h3>
+          </div>
+          <div class='inputs'>
+              <h3>Password</h3>
+              <input type='text' class='textfield' id='pw' required></input>
+              <h3 tabIndex = "0" class='forgot' id='fpw'>Forgot password</h3>
+              <input type='checkbox'><label for='check' class='checkbox'>Remember me</label></input>
+          </div>
+          
+          <button class='loginBtn'>Sign in</button>
+      </form>
+      </div>
+  </div>
+  </section>
+  <section class="footer-container" id ="footerContainer">
+    <section class="h1-wrapper">
+      <h1>hotel eden</h1> <!--or logo  -->
+    </section>
+      <nav class="footer-wrapper">
+        <button tabIndex = "0" class="home-text" id="homeTextLogin">Home</button>
+          <p class="foot-seperator">|</p>
+        <button tabIndex = "0" class="sign-up-text" id="signUpTextLogin">Sign up</button>
+          <p class="foot-seperator">|</p>
+        <button tabIndex = "0" class="book-room-text-footer" id ="bookRoomTextLogin">Book a Room</button>
+      </nav>
+    </section>
   </section>
 </body>
 <script src="bundle.js"></script>

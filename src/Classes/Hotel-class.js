@@ -14,9 +14,7 @@ class Hotel {
         this.customers = customerData;
         this.availableRooms = [];
         this.currentUser;
-       
-
-    }
+    };
 
     getCurrentDate(){
         let today = new Date();
@@ -24,21 +22,20 @@ class Hotel {
         let month = String(today.getMonth()+1).padStart(2, '0');
         let day = String(today.getDate()).padStart(2, '0');
         this.currentDate = `${year}/${month}/${day}`;
-      }
+      };
 
      
     findAvailableRooms(date){
-       let bookedRooms = this.bookings.filter(booking => booking.date === date);
-       const isAvailable = (room) => { 
-        return bookedRooms.reduce((acc, cur) => {
-           if(cur.roomNumber === room.number){
-                acc = false;
-           } 
-           return acc
-        }, true)
-       }
-      this.availableRooms = this.rooms.filter(room => isAvailable(room))
-       return this.availableRooms
+      let bookedRooms = this.bookings.filter(booking => booking.date === date);
+      const isAvailable = (room) => { 
+    return bookedRooms.reduce((acc, cur) => {
+        if(cur.roomNumber === room.number){
+            acc = false;
+        }; 
+        return acc
+    }, true)};
+        this.availableRooms = this.rooms.filter(room => isAvailable(room))
+        return this.availableRooms
     }
 
 
