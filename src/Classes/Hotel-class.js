@@ -1,18 +1,21 @@
 import Booking from './Bookings-class'
 import Customer from './Customers-class'
+import Room from './Rooms-class'
 import dayjs from 'dayjs';
 
 let now = dayjs()
 
 
 class Hotel {
-    constructor(currentDate){
-        this.currentDate = currentDate
-        // this.rooms = roomsData;
-        // this.customers = customerData;
-        // this.bookings = bookingsData.bookings;
+    constructor(currentDate, roomData, bookingData, customerData){
+        this.currentDate = currentDate;
+        this.rooms = roomData;
+        this.bookings = bookingData;
+        this.customers = customerData;
+        this.availableRooms = [];
         // this.curentUser;
-        // this.availableRooms;
+       
+
     }
 
     getCurrentDate(){
@@ -23,9 +26,19 @@ class Hotel {
         this.currentDate = `${year}/${month}/${day}`;
       }
 
-
-    findAvailableRooms(){
-
+     
+    findAvailableRooms(date){
+       let bookedRooms = this.bookings.filter(booking => booking.date === date);
+       const isAvailable = (room) => { 
+        return bookedRooms.reduce((acc, cur) => {
+           if(cur.roomNumber === room.number){
+                acc = false;
+           } 
+           return acc
+        }, true)
+       }
+      this.availableRooms = this.rooms.filter(room => isAvailable(room))
+       return this.availableRooms
     }
 
 

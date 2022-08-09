@@ -49,34 +49,30 @@ class Customer {
         return filterAllBookings
         };
 
-    calculatePointsEarned(){
-      this.pointsEarned = this.pastBookings.reduce((acc, booking) => {  
-        acc += booking.roomData.costPerNight
-        return acc
-      }, 0)
-      return this.pointsEarned
-    }
+      calculatePointsEarned(){
+        this.pointsEarned = this.pastBookings.reduce((acc, booking) => {  
+          acc += booking.roomData.costPerNight
+          return acc
+        }, 0)
+        return this.pointsEarned
+      }
 
-    calculateFutureBalance(){
-      this.futureBalance = this.upcomingBookings.reduce((acc, booking) => {  
-        console.log(`booking`, booking.roomData.costPerNight)
-        acc += booking.roomData.costPerNight
-        return acc  
-      }, 0)
-      return this.futureBalance
-    }
+      calculateFutureBalance(){
+        this.futureBalance = this.upcomingBookings.reduce((acc, booking) => {  
+          acc += booking.roomData.costPerNight
+          return acc  
+        }, 0)
+        return this.futureBalance
+      }
 
-
-     calculateTotalAmountSpent() {
-       this.totalAmountSpent = this.bookingData.reduce((acc, booking) => {  
-        console.log(booking)
-        acc += booking.roomData.costPerNight
-        return acc
-       }, 0)
-       return this.totalAmountSpeant
-     };
-
-     
+      calculateTotalAmountSpent() {
+        this.totalAmountSpent = this.bookingData.reduce((acc, booking) => {  
+          acc += booking.roomData.costPerNight
+          return acc
+        }, 0)
+        return this.totalAmountSpeant
+      };     
+      
 };
 
 

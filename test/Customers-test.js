@@ -147,6 +147,20 @@ describe('Customer', () => {
             numBeds: 1,
             costPerNight: 397.02
           }
+        },
+          {
+            id: '5fwrgu4i7k55hl6sz',
+            userID: 5,
+            date: '2022/04/22',
+            roomNumber: 5,
+            roomData: {
+              number: 5,
+              roomType: 'junior suite',
+              bidet: true,
+              bedSize: 'queen',
+              numBeds: 1,
+              costPerNight: 397.02
+            }
         }]);
       });
       it('should have a method to filter future booking dates', () => {
@@ -180,7 +194,7 @@ describe('Customer', () => {
           customer5.calculatePointsEarned(allBookings);
           
            expect(customer1.pointsEarned).to.equal(1278.98);
-           expect(customer5.pointsEarned).to.equal(397.02);
+           expect(customer5.pointsEarned).to.equal(794.04);
         });
         it('should have a method to get total future booking balance in dollars', () => { 
           customer1.getCustomerBookings(allBookings, allRoomData);
@@ -204,7 +218,7 @@ describe('Customer', () => {
         
         
           expect(customer1.totalAmountSpent).to.equal(1278.98);
-          expect(customer5.totalAmountSpent).to.equal(737.19);
+          expect(customer5.totalAmountSpent).to.equal(1134.21);
        });
 });
 

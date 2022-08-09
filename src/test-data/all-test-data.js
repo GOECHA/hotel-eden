@@ -62,6 +62,13 @@ bookingsTestData = [
     "roomNumber": 5,
 
   },
+  {
+    "id": "5fwrgu4i7k55hl6sz",
+    "userID": 5,
+    "date": "2022/04/22",
+    "roomNumber": 5,
+
+  },
 ]
 
 customerTestData = [
