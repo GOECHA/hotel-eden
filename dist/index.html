@@ -8,14 +8,14 @@
      luxury | design | hearth </title>
 </head>
 <body>
-  <section class="main-container" id ="mainContainer">
+  <section class="main-container hidden" id ="mainContainer">
     <section class="main-container-upper-wrapper" id="mainContainerUpperWrapper">
       <nav class="menu-wrapper">
-        <button tabIndex = "0" class="login-text" id="loginText">Login</button>
+        <button tabIndex= "0" class="login-text" id="login">Login</button>
         <p>|</p>
-        <button tabIndex = "0" class="sign-up-text" id="signUpText">Sign up</button>
+        <button tabIndex= "0" class="sign-up-text" id="sign up">Sign up</button>
         <p>|</p>
-        <button tabIndex = "0" class="book-room-text" id ="bookRoomText">Book a Room</button>
+        <button tabIndex= "0" class="book-room-text" id="book a room">Book a Room</button>
       </nav>
        <div class ="hotel-name-wrapper">  
          <h2 class="hotel-name-main" id="hotelNameMain">Hotel Eden</h2>
@@ -27,23 +27,23 @@
       </section>
       <section class ="right-side-lower-wrapper" id="rightSideLowerWrapper">
         <section class="right-side-grid" id="rigthSideGrid">
-          <article class="head-grid1"></article>
-          <article class="head-grid2">
+          <article class="b-head-grid1"></article>
+          <article class="b-head-grid2">
             <div class="new-trips-container" id="newTripsContainer">
               <div class="new-trips-wrapper" id="newTripsWrapper" ></div>
             </div>
           </article>
-          <article class="head-grid3"></article>
-          <article class="head-grid4"></article>
-          <article class="head-grid5"></article>
-          <article class="head-grid6"></article>
-          <article class="head-grid7">
+          <article class="b-head-grid3"></article>
+          <article class="b-head-grid4"></article>
+          <article class="b-head-grid5"></article>
+          <article class="b-head-grid6"></article>
+          <article class="b-head-grid7">
             <div class="points-earned-container" id="pointsEarnedContainer">
               <div class="points-earned-wrapper" id="pointsEarnedWrapper"></div>
             </div>
           </article>
-          <article class="head-grid8"></article>
-          <article class="head-grid9">
+          <article class="b-head-grid8"></article>
+          <article class="b-head-grid9">
             <div class="past-trips-container" id="pastTripsContainer">
               <div class="past-trips-wrapper" id="pastTripsWrapper"></div>
             </div>
@@ -97,11 +97,48 @@
               <h3 tabIndex = "0" class='forgot' id='fpw'>Forgot password</h3>
               <input type='checkbox'><label for='check' class='checkbox'>Remember me</label></input>
           </div>
-          
           <button class='loginBtn'>Sign in</button>
-      </form>
+         </form>
       </div>
-  </div>
+    </div>
+  </section>
+  <section class="book-a-room-main-container" id="bookARoomMainContainer">
+      <section class="book-a-room-main-container-upper-wrapper" id="bookARoommainContainerUpperWrapper">
+        <nav class="menu-wrapper">
+          <button tabIndex = "0" class="login-text-book-room" id="loginText">Login</button>
+          <p>|</p>
+          <button tabIndex = "0" class="sign-up-text" id="signUpText">Sign up</button>
+          <p>|</p>
+          <button tabIndex = "0" class="home-text-book-room" id="homeTextBookRoom">Home</button>
+        </nav>
+         <div class ="hotel-name-wrapper">  
+           <h2 class="hotel-name-main" id="hotelNameMain">Hotel Eden</h2>
+         </div>
+      </section>
+      <section class="book-a-room-main-container-lower-wrapper" id="mainContainerLowerWrapper">
+        <section class ="book-a-room-left-side-lower-wrapper" id="rightSideLowerWrapper">
+          <section class="book-a-room-left-side-grid" id="rigthSideGrid">
+            <article class="book-a-room-head-grid1"></article>
+            <article class="head-grid2">
+            </article>
+            <article class="head-grid3"></article>
+            <article class="head-grid4"></article>
+            <article class="head-grid5">
+              <input class=“calendar” type=“date” min=“2022/08/09” value=“” />
+              <button class="search-calendar-btn" type="button">search</button>
+              <!-- <section class="room-types"></section> -->
+            </article>
+            <article class="head-grid6"></article>
+            <article class="head-grid7"></article>
+            <article class="head-grid8"></article>
+            <article class="head-grid9"></article>
+          </section>
+        </section>
+        <section class ="book-a-room-right-side-lower-wrapper" id="leftSideLowerWrapper">
+          <section class ="book-a-room-feature-image-container" id ="featureImageContainer"></section>
+        </section>
+      </section>
+  </section>
   </section>
   <section class="footer-container" id ="footerContainer">
     <section class="h1-wrapper">

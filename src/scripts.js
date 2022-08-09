@@ -30,10 +30,14 @@ const loginPage = document.querySelector(".login-page");
 const loginBtn = document.querySelector(".login-text");
 const backHome = document.querySelector(".home-text");
 const bookARoomNav = document.querySelector(".book-room-text");
-const bookARoomFooter = document.querySelector(".book-room-text-footer")
-const footer = document.querySelector(".footer-container")
-
-
+const bookARoomFooter = document.querySelector(".book-room-text-footer");
+const footer = document.querySelector(".footer-container");
+const bookARoomPage = document.querySelector(".book-a-room-main-container");
+const toHomeFromBook = document.querySelector(".home-text-book-room");
+const toLoginFromBook = document.querySelector(".login-text-book-room");
+const searchCalendar = document.querySelector(".search-calendar");
+const calendar = document.querySelector(".calendar");
+const signInBtn = document.querySelector(".loginBtn");
 
 
 // ~~~~~~~~~~~~~~~~~~~~~Event Listeners~~~~~~~~~~~~~~~~~~~~~~
@@ -41,11 +45,13 @@ const footer = document.querySelector(".footer-container")
 window.addEventListener('load', getData);
 // navText.addEventListener('click', redirect);
 loginBtn.addEventListener(`click`, goToLoginPage);
+toLoginFromBook.addEventListener(`click`, goToLoginPage);
 redirectText.addEventListener('click', backToHome);
+toHomeFromBook.addEventListener('click', backToHome);
 backHome.addEventListener('click', backToHomeFromLogin)
 bookARoomNav.addEventListener('click', bookARoom)
 bookARoomFooter.addEventListener('click', bookARoom)
-
+signInBtn.addEventListener('click', signIn)
 
 // ~~~~~~~~~~~~~~~~~~~~~Global Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -91,6 +97,7 @@ let allRoomsData;
   // };
 
   function backToHome(){
+   hide(bookARoomPage);
    hide(redirectContainer);
    show(mainContainer);
    show(footer);
@@ -98,22 +105,29 @@ let allRoomsData;
 
   function goToLoginPage(){
     hide(mainContainer);
+    hide(bookARoomPage);
     show(loginPage);
+    show(footer);
   };
  
   function backToHomeFromLogin(){
     hide(loginPage);
+    hide(bookARoomPage);
     show(mainContainer);
   };
 
 function bookARoom(){
   hide(mainContainer);
-  hide(loginPage);``
-  show(redirectContainer);
+  hide(loginPage);
+  show(bookARoomPage);
   hide(footer);
 };
 
-
+function signIn(){
+  hide(loginPage);
+  hide(bookARoomPage);
+  show(mainContainer);
+}
 
 
 

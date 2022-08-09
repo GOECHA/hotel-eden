@@ -89,7 +89,9 @@ p {
 
 .login-text,
 .sign-up-text,
-.book-room-text{
+.book-room-text,
+.home-text-book-room,
+.login-text-book-room{
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
@@ -143,7 +145,8 @@ p {
 
 
 
-.main-container {
+.main-container,
+.book-a-room-main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,7 +162,8 @@ p {
 }
 
 
-.main-container-upper-wrapper {
+.main-container-upper-wrapper,
+.book-a-room-main-container-upper-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -171,6 +175,10 @@ p {
   background-size: cover;
   background-position: 0cm;
   margin: 0%;
+}
+
+.book-a-room-main-container-upper-wrapper{
+  background-image: url("../images/mountain-view.png");
 }
 
 .hotel-name-wrapper{
@@ -189,7 +197,8 @@ p {
   width: 35%;
 }
 
-.main-container-lower-wrapper {
+.main-container-lower-wrapper,
+.book-a-room-main-container-lower-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -221,7 +230,8 @@ width: 50%;
 padding-right: .5em;
 }
 
-.left-side-lower-wrapper {
+.left-side-lower-wrapper,
+.book-a-room-right-side-lower-wrappe {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -231,7 +241,8 @@ width: 40%;
 box-sizing: border-box;
 }
 
-.feature-image-container {
+.feature-image-container,
+.book-a-room-feature-image-container {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -249,9 +260,13 @@ background-position: 0cm;
 box-sizing: border-box;
 }
 
+.book-a-room-feature-image-container{
+background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/window-room.png");
+}
 
 
-.right-side-lower-wrapper {
+.right-side-lower-wrapper,
+.book-a-room-left-side-lower-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -261,7 +276,8 @@ box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.right-side-grid {
+.right-side-grid,
+.book-a-room-left-side-grid {
     display: grid;
     grid-template-columns: .33fr .33fr .33fr;
     grid-template-rows:  33px 33px 33x;
@@ -320,7 +336,24 @@ box-sizing: border-box;
      overflow-y: scroll;  
   }
 
+.b-head-grid5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
 
+.search-calendar-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:rgb(34, 87, 122);
+  height: 30px;
+  width:100px;
+  background: none;
+}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Redirect Page Style Containers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -395,7 +428,7 @@ box-sizing: border-box;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-      height: 98vh;
+      height: 96vh;
       width: 100vw;
       overflow: hidden;
   }
