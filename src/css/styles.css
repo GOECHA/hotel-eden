@@ -39,14 +39,24 @@ h1 {
 
 h2 {
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  width: 100%;
   margin: 0%;
   margin-left: .5em;
 }
 
+.hotel-name-main{
+  justify-self: flex-end;
+  width: 20%;
+}
+
+
 p {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
   align-items: flex-end;
   margin: 0%;
   margin-bottom: -.2em;
@@ -55,6 +65,23 @@ p {
   color: white;
 }
 
+h4,
+h5 {
+  display: flex;
+  flex-direction: column;
+  color: rgb(34, 87, 122);
+  margin: 0%;
+  margin-top: .5em;
+  font-size: 16pt;
+}
+
+h5{
+font-size: 20pt;
+}
+
+.pastTripsDates{
+  font-size: 12pt;
+}
 
 #uhOhText {
   display: flex;
@@ -69,7 +96,12 @@ p {
   display: flex;
   font-size: 30pt;
   text-align: center;
+}
 
+.calendar-error,
+.calendar-error-2 {
+color: red;
+font-size: 10pt;
 }
 
 #refreshText,
@@ -89,7 +121,9 @@ p {
 
 .login-text,
 .sign-up-text,
-.book-room-text{
+.book-room-text,
+.home-text-book-room,
+.login-text-book-room{
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
@@ -143,7 +177,8 @@ p {
 
 
 
-.main-container {
+.main-container,
+.book-a-room-main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,7 +194,8 @@ p {
 }
 
 
-.main-container-upper-wrapper {
+.main-container-upper-wrapper,
+.book-a-room-main-container-upper-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -173,10 +209,15 @@ p {
   margin: 0%;
 }
 
+.book-a-room-main-container-upper-wrapper{
+  background-image: url("../images/mountain-view.png");
+}
+
 .hotel-name-wrapper{
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
+  align-items: flex-end;
   height: 30px;
   width: 65%;
   padding-right: 1em;
@@ -189,7 +230,8 @@ p {
   width: 35%;
 }
 
-.main-container-lower-wrapper {
+.main-container-lower-wrapper,
+.book-a-room-main-container-lower-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -221,7 +263,8 @@ width: 50%;
 padding-right: .5em;
 }
 
-.left-side-lower-wrapper {
+.left-side-lower-wrapper,
+.book-a-room-right-side-lower-wrapper {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -231,7 +274,8 @@ width: 40%;
 box-sizing: border-box;
 }
 
-.feature-image-container {
+.feature-image-container,
+.book-a-room-feature-image-container {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -249,9 +293,13 @@ background-position: 0cm;
 box-sizing: border-box;
 }
 
+.book-a-room-feature-image-container{
+background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/window-room.png");
+}
 
 
-.right-side-lower-wrapper {
+.right-side-lower-wrapper,
+.book-a-room-left-side-lower-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -261,7 +309,8 @@ box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.right-side-grid {
+.right-side-grid,
+.book-a-room-left-side-grid {
     display: grid;
     grid-template-columns: .33fr .33fr .33fr;
     grid-template-rows:  33px 33px 33x;
@@ -272,6 +321,7 @@ box-sizing: border-box;
     box-sizing: border-box;
     }
 
+  .head-grid1,
   .head-grid2,
   .head-grid7,
   .head-grid9 {
@@ -280,6 +330,27 @@ box-sizing: border-box;
     justify-content: center;
     align-items: center;
   }
+
+.head-grid1{
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    color:rgb(34, 87, 122);
+    font-size: 15pt;
+    margin-top: .5em;
+
+}
+
+.welcome-message{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+  padding-top: .5em;
+}
 
   .new-trips-container,  
   .past-trips-container,
@@ -295,6 +366,10 @@ box-sizing: border-box;
     margin: .5em;
     box-sizing: border-box;
   }
+
+ .points-earned-title-wrapper{
+   margin-top: .5em;
+ }
 
   .new-trips-container{
     margin-bottom: -100px;
@@ -317,10 +392,65 @@ box-sizing: border-box;
     height: 210px;
     width: 210px;
     box-sizing: border-box;
-     overflow-y: scroll;  
+    overflow-x: scroll; 
+  }
+
+  .past-trip-list-wrapper,
+  .new-trips-list-wrapper,
+  .points-earned-total-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(34, 87, 122);
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
   }
 
 
+.list-past-trips{
+  display: flex;
+  justify-self: flex-start;
+  height: 50%;
+}
+
+  .points-earned-total-wrapper{
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+
+.b-head-grid5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.calendar-input{
+  display: flex;
+  margin-top: .5em;
+  width: 200px;
+  height: 30px;
+  font-size: 15pt;
+  color:rgb(34, 87, 122);
+
+}
+
+.search-calendar-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:rgb(34, 87, 122);
+  height: 30px;
+  width:100px;
+  background: none;
+  border-color: rgb(34, 87, 122);
+  margin-top: .5em;
+  cursor: pointer;
+}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Redirect Page Style Containers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -395,7 +525,7 @@ box-sizing: border-box;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-      height: 98vh;
+      height: 96vh;
       width: 100vw;
       overflow: hidden;
   }
@@ -444,7 +574,7 @@ box-sizing: border-box;
       color: white;
       transition: all 600ms ease-out;
   }
-  
+  .search-calendar-btn:hover,
   .loginBtn:hover {
       background-color: rgba(56, 163, 165, .7);
       cursor: pointer;

@@ -41,9 +41,9 @@ class Customer {
             return a.date - b.date
         })
         let filterAllBookings = datesTotal.filter(date => {
-          if(date.date < today){
+          if(date.date < today){       
             this.pastBookings.push(date)
-          } else if (date.date >= today) {
+          } else if (date.date > today && !this.upcomingBookings.includes(date)){
             this.upcomingBookings.push(date)
           }
           return date

@@ -26,16 +26,21 @@ class Hotel {
 
      
     findAvailableRooms(date){
-      let bookedRooms = this.bookings.filter(booking => booking.date === date);
+      let bookedRooms = this.bookings.filter(booking => {
+         if(booking.date === date){
+            return booking
+         }
+        });
       const isAvailable = (room) => { 
     return bookedRooms.reduce((acc, cur) => {
         if(cur.roomNumber === room.number){
-            acc = false;
+            acc = false;   
         }; 
+        this.availableRooms.push(cur)
         return acc
     }, true)};
         this.availableRooms = this.rooms.filter(room => isAvailable(room))
-        return this.availableRooms
+        console.log(`this.availableRooms `, this.availableRooms )
     }
 
 
@@ -46,22 +51,18 @@ class Hotel {
 
     findCurrentUser(userName){
        let customerUserName = userName.split('customer')
-       console.log(`customerId`, customerUserName[1])
        let customerId = this.customers.find(customer => customer.id === parseInt(customerUserName[1]))
-       console.log(`customerId`, customerId)
        return customerId
     }
 
     checkValidLoginData(login, password){
         let match = this.findCurrentUser(login) || 'noMatch' 
-        console.log(`match.userName`, match.userName)
         if (login === match.userName && password === 'overlook2021'){
             return true
         } else {
             return false
         }
     }
- 
 
 };
 
