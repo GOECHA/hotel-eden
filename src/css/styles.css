@@ -47,6 +47,10 @@ h2 {
   margin-left: .5em;
 }
 
+.hotel-name-main{
+  justify-self: flex-end;
+  width: 20%;
+}
 
 
 p {
@@ -92,7 +96,12 @@ font-size: 20pt;
   display: flex;
   font-size: 30pt;
   text-align: center;
+}
 
+.calendar-error,
+.calendar-error-2 {
+color: red;
+font-size: 10pt;
 }
 
 #refreshText,
@@ -208,6 +217,7 @@ font-size: 20pt;
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
+  align-items: flex-end;
   height: 30px;
   width: 65%;
   padding-right: 1em;

@@ -9,7 +9,7 @@
      luxury | design | hearth </title>
 </head>
 <body>
-  <section class="main-container" id ="mainContainer">
+  <section class="main-container hidden" id ="mainContainer">
     <section class="main-container-upper-wrapper" id="mainContainerUpperWrapper">
       <nav class="menu-wrapper">
         <button tabIndex= "0" class="login-text" id="login">Login</button>
@@ -74,6 +74,7 @@
       </section>
     </section>
 </section>
+  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <section class="redirect-container hidden" id ="redirectContainer">
     <article class="redirect-grid1">
       <div class="uh-oh" id="uhOh1">
@@ -102,19 +103,19 @@
     <article class="redirect-grid8"></article>
     <article class="redirect-grid9"></article>
   </section>
-  <section class="login-page hidden" id="loginPage">
+  <section class="login-page " id="loginPage">
     <div class="login-wrapper" id="loginWrapper">
       <div class='pcon'>
           <h2>Welcome! Please login.</h2>
           <form>
           <div class='inputs'>
               <h3>Username</h3>
-              <input type='text' class='textfield' id='un' required></input>
+              <input type='text' class='textfield userName' id='un' required></input>
               <h3 tabIndex = "0" class='forgot' id='fun'>Forgot username</h3>
           </div>
           <div class='inputs'>
               <h3>Password</h3>
-              <input type='text' class='textfield' id='pw' required></input>
+              <input type='text' class='textfield passWord' id='pw' required></input>
               <h3 tabIndex = "0" class='forgot' id='fpw'>Forgot password</h3>
               <input type='checkbox'><label for='check' class='checkbox'>Remember me</label></input>
           </div>
@@ -125,6 +126,7 @@
   </section>
   <section class="book-a-room-main-container hidden" id="bookARoomMainContainer">
       <section class="book-a-room-main-container-upper-wrapper" id="bookARoommainContainerUpperWrapper">
+        <p class="need-to-login-error hidden">Please, login to Reserve a Room</p>
         <nav class="menu-wrapper">
           <button tabIndex = "0" class="login-text-book-room" id="loginText">Login</button>
           <p>|</p>
@@ -137,25 +139,30 @@
          </div>
       </section>
       <section class="book-a-room-main-container-lower-wrapper" id="mainContainerLowerWrapper">
-        <section class ="book-a-room-left-side-lower-wrapper" id="leftSideLowerWrapper">
-          <section class="book-a-room-left-side-grid" id="leftSideGrid">
-            <article class="book-a-room-head-grid1"></article>
-            <article class="b-head-grid2">
+        <section class ="book-a-room-left-side-lower-wrapper" id="leftSideLowerWrapper">   
+      <section class="book-a-room-left-side-grid" id="leftSideGrid">      
+          <!-- <article class="b-head-grid">
             </article>
-            <article class="b-head-grid3"></article>
-            <article class="b-head-grid4"></article>
-            <article class="b-head-grid5">
+            <article class="b-head-grid">
             </article>
-            <article class="b-head-grid6"></article>
-            <article class="b-head-grid7"></article>
-            <article class="b-head-grid8"></article>
-            <article class="b-head-grid9"></article>
+            <article class="b-head-grid"></article>
+            <article class="b-head-grid"></article>
+            <article class="b-head-grid">
+            </article>
+            <article class="b-head-grid"></article>
+            <article class="b-head-grid"></article>
+            <article class="b-head-grid"></article>
+            <article class="b-head-grid"></article> -->
           </section>
         </section>
         <section class ="book-a-room-right-side-lower-wrapper" id="rightSideLowerWrapper">
           <input class="calendar-input" type="date" name="calendar-text">
               <button class="search-calendar-btn" type="button">search</button>
-          <section class ="book-a-room-feature-image-container" id ="featureImageContainer"></section>
+              <p class="calendar-error hidden">Please enter a valid Date</p>
+              <p class="calendar-error-2 hidden"> Please fill in all fields</p>
+          <section class ="book-a-room-feature-image-container" id ="featureImageContainer">
+
+          </section>
         </section>
       </section>
   </section>

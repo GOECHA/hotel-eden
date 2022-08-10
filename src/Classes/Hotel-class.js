@@ -26,16 +26,21 @@ class Hotel {
 
      
     findAvailableRooms(date){
-      let bookedRooms = this.bookings.filter(booking => booking.date === date);
+      let bookedRooms = this.bookings.filter(booking => {
+         if(booking.date === date){
+            return booking
+         }
+        });
       const isAvailable = (room) => { 
     return bookedRooms.reduce((acc, cur) => {
         if(cur.roomNumber === room.number){
-            acc = false;
+            acc = false;   
         }; 
+        this.availableRooms.push(cur)
         return acc
     }, true)};
         this.availableRooms = this.rooms.filter(room => isAvailable(room))
-        return this.availableRooms
+        console.log(`this.availableRooms `, this.availableRooms )
     }
 
 
