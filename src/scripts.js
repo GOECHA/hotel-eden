@@ -34,18 +34,19 @@ const futureTrips = document.querySelector(".list-upcoming-trips");
 const totalPoints = document.querySelector(".points-earned");
 const futureBalanceTotal = document.querySelector(".future-balance");
 const calendarError2 = document.querySelector(".calendar-error-2");
-const bookingContainer = document.querySelector(".book-a-room-feature-image-container")
-const roomTypeBtn1 = document.querySelector(".roomTypeBtn")
-const bookRoomLeftGrid = document.querySelector(".book-a-room-left-side-grid")
-const bookingStatus = document.querySelector(".need-to-login-error")
-const toLoginBtn = document.querySelector(".loginBtn")
-const userNameInput = document.querySelector(".userName")
-const passWordInput = document.querySelector(".passWord")
-const refreshSearchBtn = document.querySelector(".refresh-search-btn")
-const bookRoomGrid = document.querySelector(".b-head-grid")
-const availableRoomInfo =  document.querySelector(".ul")
-const invalidLoginError = document.querySelector (".invalid-login-error")
-
+const bookingContainer = document.querySelector(".book-a-room-feature-image-container");
+const roomTypeBtn1 = document.querySelector(".roomTypeBtn");
+const bookRoomLeftGrid = document.querySelector(".book-a-room-left-side-grid");
+const bookingStatus = document.querySelector(".need-to-login-error");
+const toLoginBtn = document.querySelector(".loginBtn");
+const userNameInput = document.querySelector(".userName");
+const passWordInput = document.querySelector(".passWord");
+const refreshSearchBtn = document.querySelector(".refresh-search-btn");
+const bookRoomGrid = document.querySelector(".b-head-grid");
+const availableRoomInfo =  document.querySelector(".ul");
+const invalidLoginError = document.querySelector(".invalid-login-error");
+const signUp = document.querySelector(".sign-up-text");
+const signUpText = document.querySelector(".sign-up-text-2");
 
 // ~~~~~~~~~~~~~~~~~~~~~Event Listeners~~~~~~~~~~~~~~~~~~~~~~
 
@@ -61,6 +62,8 @@ searchCalendar.addEventListener("click", searchForRoom);
 bookingContainer.addEventListener("click", filterRoomsByType);
 toLoginBtn.addEventListener("click", loginByUserName);
 refreshSearchBtn.addEventListener("click", refreshSearch);
+signUp.addEventListener("click", signIn);
+signUpText.addEventListener("click", signIn);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~Global Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,7 +87,7 @@ let addBooking;
 // ~~~~~~~~~~~~~~~~~~~~~Functions~~~~~~~~~~~~~~~~~~~~~~
   function getData() {
     getAllData.then((data) => {
-      console.log('data', data)
+    console.log('data', data)
     customerData = data[0].customers.map(customer => new Customer(customer));
     customer = new Customer(customerData[Math.floor(Math.random() * 41)]);
     allRoomsData = data[1].rooms.map(room => new Room(room));
@@ -140,7 +143,8 @@ let addBooking;
   function signIn(){
     hide(loginPage);
     hide(bookARoomPage);
-    show(mainContainer);
+    hide(mainContainer);
+    show(redirectContainer);
   };
 
 
@@ -152,70 +156,70 @@ let addBooking;
   };
 
 
-function showPastBookings(){
-  customer.getCustomerBookings(hotel.bookings, hotel.rooms)
-  customer.allBookingsTotal()
+  function showPastBookings(){
+    customer.getCustomerBookings(hotel.bookings, hotel.rooms)
+    customer.allBookingsTotal()
     pastTrips.innerHTML = '';
     customer.pastBookings.forEach(booking => {
-       let pastTrip = document.createElement('h5')
-       pastTrip.innerText = booking.date
-       pastTrips.appendChild(pastTrip)
+      let pastTrip = document.createElement('h5')
+      pastTrip.innerText = booking.date
+      pastTrips.appendChild(pastTrip)
       });
-  };
+    };
 
 
-function showUpcomingBookings(){
-  customer.getCustomerBookings(hotel.bookings, hotel.rooms)
-  customer.allBookingsTotal()
-  futureTrips.innerHTML = '';
-   customer.upcomingBookings.forEach(booking => {
-       let upcomingTrip = document.createElement('h5')
-       upcomingTrip.innerText = booking.date
-       futureTrips.appendChild(upcomingTrip)
-      });
-};
+    function showUpcomingBookings(){
+      customer.getCustomerBookings(hotel.bookings, hotel.rooms)
+      customer.allBookingsTotal()
+      futureTrips.innerHTML = '';
+      customer.upcomingBookings.forEach(booking => {
+          let upcomingTrip = document.createElement('h5')
+          upcomingTrip.innerText = booking.date
+          futureTrips.appendChild(upcomingTrip)
+          });
+    };
 
-function displayPoints (){
-  customer.calculatePointsEarned()
-  totalPoints.innerHTML = '';
-  let allPoints = document.createElement('h5')
-  allPoints.innerText = customer.pointsEarned.toFixed(0)
-  totalPoints.appendChild(allPoints)
-};
+    function displayPoints (){
+      customer.calculatePointsEarned()
+      totalPoints.innerHTML = '';
+      let allPoints = document.createElement('h5')
+      allPoints.innerText = customer.pointsEarned.toFixed(0)
+      totalPoints.appendChild(allPoints)
+    };
 
-function displayFutureBalance(){
-  customer.calculateFutureBalance()
-  futureBalanceTotal.innerHTML = '';
-  let futureBalance = document.createElement('h5')
-  futureBalance.innerText = `$${customer.futureBalance.toFixed(0)}`
-  futureBalanceTotal.appendChild(futureBalance)
-};
+    function displayFutureBalance(){
+      customer.calculateFutureBalance()
+      futureBalanceTotal.innerHTML = '';
+      let futureBalance = document.createElement('h5')
+      futureBalance.innerText = `$${customer.futureBalance.toFixed(0)}`
+      futureBalanceTotal.appendChild(futureBalance)
+    };
 
-  function searchForRoom(){
-    if(calendar.value === ``){
-      show(calendarError2);  
-    } else {
-      let calendarInput = calendar.value.split("-").join("/");
-      hotel.findAvailableRooms(calendarInput);
-      createRoomTypeBtn();
-    }
+      function searchForRoom(){
+        if(calendar.value === ``){
+          show(calendarError2);  
+        } else {
+          let calendarInput = calendar.value.split("-").join("/");
+          hotel.findAvailableRooms(calendarInput);
+          createRoomTypeBtn();
+        }
 
-  };
+      };
 
-  function createRoomTypeBtn(){
-    let reduced = hotel.availableRooms.reduce((acc, cur) => {
-      if(!acc.includes(cur.roomType)){
-        acc.push(cur.roomType)
-      }
-      return acc
-    }, [])
-    reduced.forEach(roomType => {
-      let button = document.createElement('button')
-      button.classList.add('roomTypeBtn') 
-      button.innerText = roomType
-      bookingContainer.appendChild(button)
-    })
-  };
+      function createRoomTypeBtn(){
+        let reduced = hotel.availableRooms.reduce((acc, cur) => {
+          if(!acc.includes(cur.roomType)){
+            acc.push(cur.roomType)
+          }
+          return acc
+        }, [])
+        reduced.forEach(roomType => {
+          let button = document.createElement('button')
+          button.classList.add('roomTypeBtn') 
+          button.innerText = roomType
+          bookingContainer.appendChild(button)
+        })
+      };
 
 
   function filterRoomsByType(event){
@@ -238,8 +242,7 @@ function displayFutureBalance(){
       newArticle.classList.add('b-head-grid')
       newArticle.innerHTML = `<ul> <h5>Room Number:${room.number}</h5><li>Room Type: ${room.roomType}</li> <li> Has a Bidet:${room.bidet}</li> <li> Bed Size: ${room.bedSize}</li><li> Number of Beds: ${room.numBeds}</li><li> Price per Night: ${room.costPerNight}</li>`
       newArticle.appendChild(bookRoomBtn) 
-      bookRoomLeftGrid.appendChild(newArticle)
-       
+      bookRoomLeftGrid.appendChild(newArticle)  
         })
   };
 
