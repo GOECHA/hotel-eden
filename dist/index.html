@@ -29,14 +29,14 @@
       <section class ="right-side-lower-wrapper" id="rightSideLowerWrapper">
         <section class="right-side-grid" id="rightSideGrid">
           <article class="head-grid1">
-            <h5 class="welcome-message">Welcome!</h5>
+            <h4 class="welcome-message">Welcome!</h4>
           </article>
           <article class="head-grid2">
             <div class="new-trips-container" id="newTripsContainer">
               <div class="new-trips-wrapper" id="newTripsWrapper" >
                 <h2 class="upcoming-trips-title-wrapper"> Upcoming Trips</h2>
-                <div class="points-earned-total-wrapper">
-                <h4 class="list-upcoming-trips" id="UpcomingTripList"> You have no Upcoming Trips</h4>
+                <div class="points-earned-total-wrapper" role="points earned total">
+                <h5 class="list-upcoming-trips " id="UpcomingTripList"> You have no Upcoming Trips</h5>
               </div>
               </div>
             </div>
@@ -50,11 +50,11 @@
               <div class="points-earned-wrapper" id="pointsEarnedWrapper">
                 <h2 class="points-earned-title-wrapper"> Points Earned</h2>
                 <div class="points-earned-total-wrapper">
-                <h4 class="points-earned" id="pointsEarned">Book your next trip to earn points</h4>
+                <h5 class="points-earned" id="pointsEarned">Reserve your next room to earn points</h5>
                 </div>
                 <h2 class="points-earned-title-wrapper"> Future Balance</h2>
                 <div class="points-earned-total-wrapper">
-                <h4 class="future-balance" id="futureBalance">Future Balance Total $0</h4>
+                <h5 class="future-balance" id="futureBalance" role="points earned total">Future Balance Total $0</h5>
               </div>
               </div>
             </div>
@@ -63,9 +63,9 @@
           <article class="head-grid9">
             <div class="past-trips-container" id="pastTripsContainer">
               <div class="past-trips-wrapper" id="pastTripsWrapper">
-                <h2 class="past-trips-title-wrapper"> Past Trips</h2>
+                <h2 class="past-trips-title-wrapper">Past Reservations</h2>
                 <div class="past-trip-list-wrapper">
-                  <h4 class="list-past-trips" id="PastTripsList"> innerHTML PastTrips</h4>
+                  <h5 class="list-past-trips" id="PastTripsList"></h5>
                 </div>
               </div>
             </div>
@@ -107,6 +107,7 @@
     <div class="login-wrapper" id="loginWrapper">
       <div class='pcon'>
           <h2>Welcome! Please login.</h2>
+          <p class="invalid-login-error hidden">Please, enter valid login credentials</p>
           <form>
           <div class='inputs'>
               <h3>Username</h3>
@@ -115,7 +116,7 @@
           </div>
           <div class='inputs'>
               <h3>Password</h3>
-              <input type='text' class='textfield passWord' id='pw' required></input>
+              <input type='password' class='textfield passWord' id='pw' required></input>
               <h3 tabIndex = "0" class='forgot' id='fpw'>Forgot password</h3>
               <input type='checkbox'><label for='check' class='checkbox'>Remember me</label></input>
           </div>
@@ -126,7 +127,10 @@
   </section>
   <section class="book-a-room-main-container hidden" id="bookARoomMainContainer">
       <section class="book-a-room-main-container-upper-wrapper" id="bookARoommainContainerUpperWrapper">
-        <p class="need-to-login-error hidden">Please, login to Reserve a Room</p>
+        <div class="error-wrapper">
+          <p class="need-to-login-error hidden">Please, login to Reserve a Room</p>
+        </div>
+        <div class="main-upper-container-lower-wrapper">
         <nav class="menu-wrapper">
           <button tabIndex = "0" class="login-text-book-room" id="loginText">Login</button>
           <p>|</p>
@@ -137,31 +141,22 @@
          <div class ="hotel-name-wrapper">  
            <h2 class="hotel-name-main" id="hotelNameMain">Hotel Eden</h2>
          </div>
+        </div>
       </section>
       <section class="book-a-room-main-container-lower-wrapper" id="mainContainerLowerWrapper">
         <section class ="book-a-room-left-side-lower-wrapper" id="leftSideLowerWrapper">   
       <section class="book-a-room-left-side-grid" id="leftSideGrid">      
-          <!-- <article class="b-head-grid">
-            </article>
-            <article class="b-head-grid">
-            </article>
-            <article class="b-head-grid"></article>
-            <article class="b-head-grid"></article>
-            <article class="b-head-grid">
-            </article>
-            <article class="b-head-grid"></article>
-            <article class="b-head-grid"></article>
-            <article class="b-head-grid"></article>
-            <article class="b-head-grid"></article> -->
           </section>
         </section>
         <section class ="book-a-room-right-side-lower-wrapper" id="rightSideLowerWrapper">
           <input class="calendar-input" type="date" name="calendar-text">
-              <button class="search-calendar-btn" type="button">search</button>
-              <p class="calendar-error hidden">Please enter a valid Date</p>
-              <p class="calendar-error-2 hidden"> Please fill in all fields</p>
+              <div class ="search-btn-wrapper">
+                <button class="search-calendar-btn" type="button">Search</button>
+                <button class="refresh-search-btn" type="button">Refresh</button>
+              </div>
+                <p class="calendar-error hidden">Please enter a valid Date</p>
+                <p class="calendar-error-2 hidden"> Please fill in all fields</p>        
           <section class ="book-a-room-feature-image-container" id ="featureImageContainer">
-
           </section>
         </section>
       </section>
@@ -176,7 +171,7 @@
           <p class="foot-seperator">|</p>
         <button tabIndex = "0" class="sign-up-text" id="signUpTextLogin">Sign up</button>
           <p class="foot-seperator">|</p>
-        <button tabIndex = "0" class="book-room-text-footer" id ="bookRoomTextLogin">Book a Room</button>
+        <button tabIndex = "0" class="book-room-text-footer" id ="bookRoomTextLogin">Reserve a Room</button>
       </nav>
     </section>
   </section>

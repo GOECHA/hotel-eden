@@ -1,7 +1,7 @@
 
- * {
+ /* * {
   border: 1px solid purple;
-} 
+}  */
 
 
 html {
@@ -65,6 +65,14 @@ p {
   color: white;
 }
 
+.need-to-login-error{
+display: flex;
+justify-self: center !important;
+align-items: flex-end !important;
+font-size: 40pt;
+}
+
+
 h4,
 h5 {
   display: flex;
@@ -75,7 +83,7 @@ h5 {
   font-size: 16pt;
 }
 
-h5{
+h4{
 font-size: 20pt;
 }
 
@@ -99,7 +107,8 @@ font-size: 20pt;
 }
 
 .calendar-error,
-.calendar-error-2 {
+.calendar-error-2,
+.invalid-login-error {
 color: red;
 font-size: 10pt;
 }
@@ -118,6 +127,9 @@ font-size: 10pt;
   color: rgb(128, 237, 153);
 }
 
+li{
+  margin-top: .5em;
+}
 
 .login-text,
 .sign-up-text,
@@ -190,7 +202,7 @@ font-size: 10pt;
   background-size: cover;
   margin: 0%;
   overflow-y: scroll;
-   overflow-x: scroll;
+  overflow-x: scroll;
 }
 
 
@@ -207,6 +219,28 @@ font-size: 10pt;
   background-size: cover;
   background-position: 0cm;
   margin: 0%;
+}
+
+.book-a-room-main-container-upper-wrapper{
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-upper-container-lower-wrapper{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: flex-end;
+ width: 100%;
+ height: 30%;
+}
+.error-wrapper{
+  display: flex;
+  justify-self: center !important;
+  align-self: center !important;
+  height: 30%;
+  width: 100%;
+  font-size: 40pt;
 }
 
 .book-a-room-main-container-upper-wrapper{
@@ -274,6 +308,15 @@ width: 40%;
 box-sizing: border-box;
 }
 
+.search-btn-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+}
+
 .feature-image-container,
 .book-a-room-feature-image-container {
 display: flex;
@@ -314,13 +357,17 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
     display: grid;
     grid-template-columns: .33fr .33fr .33fr;
     grid-template-rows:  33px 33px 33x;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    overflow-y: scroll;
+    margin-top: .5em ;
+    margin-bottom: .5em;
     }
 
+  
   .head-grid1,
   .head-grid2,
   .head-grid7,
@@ -359,8 +406,8 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(34, 87, 122 , .3);
-    filter: drop-shadow(2px 3px 3px #C7F9CC);
+    background-color: rgb(199, 249, 204, .5);
+    filter: drop-shadow(2px 3px 3px #22577A);
     height: 230px;
     width: 230px;
     margin: .5em;
@@ -401,6 +448,7 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     color: rgb(34, 87, 122);
     height: 80%;
     width: 100%;
@@ -412,6 +460,7 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
   display: flex;
   justify-self: flex-start;
   height: 50%;
+  width: 100%;
 }
 
   .points-earned-total-wrapper{
@@ -420,13 +469,20 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
   }
 
 
-.b-head-grid5{
+.b-head-grid{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgb(199, 249, 204, .2);
+  filter: drop-shadow(2px 3px 3px #22577A);
+  font-size: 12pt;
+  color:rgb(34, 87, 122);
   height: 100%;
   width: 100%;
+  margin-left: .5em;
+  margin-top: .5em;
+  box-sizing: border-box;
 }
 
 .calendar-input{
@@ -439,16 +495,20 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
 
 }
 
-.search-calendar-btn{
+.bookRoomBtn,
+.refresh-search-btn,
+.search-calendar-btn,
+.roomTypeBtn{
   display: flex;
   justify-content: center;
   align-items: center;
   color:rgb(34, 87, 122);
   height: 30px;
-  width:100px;
-  background: none;
+  width: 120px;
+  background: rgb(199, 249, 204, .5);
   border-color: rgb(34, 87, 122);
   margin-top: .5em;
+  margin-left: .5em;
   cursor: pointer;
 }
 
@@ -574,6 +634,10 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
       color: white;
       transition: all 600ms ease-out;
   }
+
+  .bookRoomBtn:hover,
+  .refresh-search-btn:hover,
+  .roomTypeBtn:hover,
   .search-calendar-btn:hover,
   .loginBtn:hover {
       background-color: rgba(56, 163, 165, .7);
