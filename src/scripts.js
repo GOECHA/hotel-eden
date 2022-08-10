@@ -146,8 +146,7 @@ let allRoomsData;
   function updateCustomerWelcome() {
     welcomeMessage.innerHTML = '';
     let customerName = document.createElement('h5')
-    console.log(`customerName`, customerName)
-    console.log(`customer.name`, customer.name)
+
     customerName.innerHTML = `Welcome, <b> ${customer.name}!`;
     welcomeMessage.appendChild(customerName)  
   }
@@ -156,20 +155,20 @@ let allRoomsData;
 function showPastBookings(){
   customer.getCustomerBookings(hotel.bookings, hotel.rooms)
   customer.allBookingsTotal()
-    pastTrips.innerHTML = '';
-    customer.pastBookings.forEach(booking => {
-       let pastTrip = document.createElement('h4')
-       pastTrip.innerText = booking.date
-       pastTrips.appendChild(pastTrip)
-      });
-  };
+  pastTrips.innerHTML = '';
+  customer.pastBookings.forEach(booking => {
+      let pastTrip = document.createElement('h4')
+      pastTrip.innerText = booking.date
+      pastTrips.appendChild(pastTrip)
+  });
+};
 
 
 function showUpcomingBookings(){
   customer.getCustomerBookings(hotel.bookings, hotel.rooms)
   customer.allBookingsTotal()
   futureTrips.innerHTML = '';
-   customer.upcomingBookings.forEach(booking => {
+  customer.upcomingBookings.forEach(booking => {
        let upcomingTrip = document.createElement('h4')
        upcomingTrip.innerText = booking.date
        futureTrips.appendChild(upcomingTrip)
