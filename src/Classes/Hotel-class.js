@@ -46,22 +46,18 @@ class Hotel {
 
     findCurrentUser(userName){
        let customerUserName = userName.split('customer')
-       console.log(`customerId`, customerUserName[1])
        let customerId = this.customers.find(customer => customer.id === parseInt(customerUserName[1]))
-       console.log(`customerId`, customerId)
        return customerId
     }
 
     checkValidLoginData(login, password){
         let match = this.findCurrentUser(login) || 'noMatch' 
-        console.log(`match.userName`, match.userName)
         if (login === match.userName && password === 'overlook2021'){
             return true
         } else {
             return false
         }
     }
- 
 
 };
 

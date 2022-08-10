@@ -44,9 +44,12 @@ h2 {
   margin-left: .5em;
 }
 
+
+
 p {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
   align-items: flex-end;
   margin: 0%;
   margin-bottom: -.2em;
@@ -55,6 +58,25 @@ p {
   color: white;
 }
 
+h4,
+h5 {
+  display: flex;
+  flex-direction: column;
+  color: rgb(34, 87, 122);
+  margin: 0%;
+  margin-top: .5em;
+  font-size: 16pt;
+  /* overflow-y: scroll; */
+}
+
+h5{
+font-size: 20pt;
+margin-top: .7em;
+}
+
+.pastTripsDates{
+  font-size: 12pt;
+}
 
 #uhOhText {
   display: flex;
@@ -231,7 +253,7 @@ padding-right: .5em;
 }
 
 .left-side-lower-wrapper,
-.book-a-room-right-side-lower-wrappe {
+.book-a-room-right-side-lower-wrapper {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -288,6 +310,7 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
     box-sizing: border-box;
     }
 
+  .head-grid1,
   .head-grid2,
   .head-grid7,
   .head-grid9 {
@@ -296,6 +319,27 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
     justify-content: center;
     align-items: center;
   }
+
+.head-grid1{
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    color:rgb(34, 87, 122);
+    font-size: 15pt;
+    margin-top: .5em;
+
+}
+
+.welcome-message{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+  padding-top: .5em;
+}
 
   .new-trips-container,  
   .past-trips-container,
@@ -312,6 +356,10 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
     box-sizing: border-box;
   }
 
+ .points-earned-title-wrapper{
+   margin-top: .5em;
+ }
+
   .new-trips-container{
     margin-bottom: -100px;
   }
@@ -327,14 +375,33 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
   #pointsEarnedWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: rgb(254,	254,	254, .3);
     height: 210px;
     width: 210px;
     box-sizing: border-box;
-     overflow-y: scroll;  
+    overflow-x: scroll; 
   }
+
+  .past-trip-list-wrapper,
+  .new-trips-list-wrapper,
+  .points-earned-total-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(34, 87, 122);
+    height: 80%;
+    width: 90%;
+    overflow-y: scroll;
+  }
+
+  .points-earned-total-wrapper{
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
 
 .b-head-grid5{
   display: flex;
@@ -345,6 +412,16 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
   width: 100%;
 }
 
+.calendar-input{
+  display: flex;
+  margin-top: .5em;
+  width: 200px;
+  height: 30px;
+  font-size: 15pt;
+  color:rgb(34, 87, 122);
+
+}
+
 .search-calendar-btn{
   display: flex;
   justify-content: center;
@@ -353,6 +430,9 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
   height: 30px;
   width:100px;
   background: none;
+  border-color: rgb(34, 87, 122);
+  margin-top: .5em;
+  cursor: pointer;
 }
 
 
@@ -477,7 +557,7 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 
       color: white;
       transition: all 600ms ease-out;
   }
-  
+  .search-calendar-btn:hover,
   .loginBtn:hover {
       background-color: rgba(56, 163, 165, .7);
       cursor: pointer;

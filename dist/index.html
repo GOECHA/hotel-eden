@@ -9,13 +9,13 @@
      luxury | design | hearth </title>
 </head>
 <body>
-  <section class="main-container hidden" id ="mainContainer">
+  <section class="main-container" id ="mainContainer">
     <section class="main-container-upper-wrapper" id="mainContainerUpperWrapper">
       <nav class="menu-wrapper">
         <button tabIndex= "0" class="login-text" id="login">Login</button>
-        <p>|</p>
+        <p class="p2">|</p>
         <button tabIndex= "0" class="sign-up-text" id="sign up">Sign up</button>
-        <p>|</p>
+        <p class="p2">|</p>
         <button tabIndex= "0" class="book-room-text" id="book a room">Book a Room</button>
       </nav>
        <div class ="hotel-name-wrapper">  
@@ -28,10 +28,17 @@
       </section>
       <section class ="right-side-lower-wrapper" id="rightSideLowerWrapper">
         <section class="right-side-grid" id="rightSideGrid">
-          <article class="head-grid1"></article>
+          <article class="head-grid1">
+            <h5 class="welcome-message">Welcome!</h5>
+          </article>
           <article class="head-grid2">
             <div class="new-trips-container" id="newTripsContainer">
-              <div class="new-trips-wrapper" id="newTripsWrapper" ></div>
+              <div class="new-trips-wrapper" id="newTripsWrapper" >
+                <h2 class="upcoming-trips-title-wrapper"> Upcoming Trips</h2>
+                <div class="points-earned-total-wrapper">
+                <h4 class="list-upcoming-trips" id="UpcomingTripList"> You have no Upcoming Trips</h4>
+              </div>
+              </div>
             </div>
           </article>
           <article class="head-grid3"></article>
@@ -40,13 +47,27 @@
           <article class="head-grid6"></article>
           <article class="head-grid7">
             <div class="points-earned-container" id="pointsEarnedContainer">
-              <div class="points-earned-wrapper" id="pointsEarnedWrapper"></div>
+              <div class="points-earned-wrapper" id="pointsEarnedWrapper">
+                <h2 class="points-earned-title-wrapper"> Points Earned</h2>
+                <div class="points-earned-total-wrapper">
+                <h4 class="points-earned" id="pointsEarned">Book your next trip to earn points</h4>
+                </div>
+                <h2 class="points-earned-title-wrapper"> Future Balance</h2>
+                <div class="points-earned-total-wrapper">
+                <h4 class="future-balance" id="futureBalance">Future Balance Total $0</h4>
+              </div>
+              </div>
             </div>
           </article>
           <article class="head-grid8"></article>
           <article class="head-grid9">
             <div class="past-trips-container" id="pastTripsContainer">
-              <div class="past-trips-wrapper" id="pastTripsWrapper"></div>
+              <div class="past-trips-wrapper" id="pastTripsWrapper">
+                <h2 class="past-trips-title-wrapper"> Past Trips</h2>
+                <div class="past-trip-list-wrapper">
+                  <h4 class="list-past-trips" id="PastTripsList"> innerHTML PastTrips</h4>
+                </div>
+              </div>
             </div>
           </article>
         </section>
@@ -103,7 +124,7 @@
       </div>
     </div>
   </section>
-  <section class="book-a-room-main-container" id="bookARoomMainContainer">
+  <section class="book-a-room-main-container hidden" id="bookARoomMainContainer">
       <section class="book-a-room-main-container-upper-wrapper" id="bookARoommainContainerUpperWrapper">
         <nav class="menu-wrapper">
           <button tabIndex = "0" class="login-text-book-room" id="loginText">Login</button>
@@ -133,7 +154,7 @@
           </section>
         </section>
         <section class ="book-a-room-right-side-lower-wrapper" id="rightSideLowerWrapper">
-          <input type="date" name="calendar-text">
+          <input class="calendar-input" type="date" name="calendar-text">
               <button class="search-calendar-btn" type="button">search</button>
           <section class ="book-a-room-feature-image-container" id ="featureImageContainer"></section>
         </section>
