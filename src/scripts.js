@@ -1,16 +1,6 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
 
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/styles.css';
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-
 import { getAllData } from './apiCalls';
-import { Datepicker } from 'vanillajs-datepicker';
-// const dayjs = require('dayjs')
-//import dayjs from 'dayjs' // ES 2015
-// dayjs().format()
-
 import Room from './classes/Rooms-class';
 import Customer from './classes/Customers-class';
 import Booking from './classes/Bookings-class';
@@ -38,38 +28,39 @@ const toHomeFromBook = document.querySelector(".home-text-book-room");
 const toLoginFromBook = document.querySelector(".login-text-book-room");
 const searchCalendar = document.querySelector(".search-calendar-btn");
 const calendar = document.querySelector('.calendar-input');
-// const customerWelcomeMessage = document.querySelector('input[name="calendar-text"]');
 const welcomeMessage = document.querySelector(".welcome-message");
 const pastTrips = document.querySelector(".list-past-trips");
 const futureTrips = document.querySelector(".list-upcoming-trips");
 const totalPoints = document.querySelector(".points-earned");
 const futureBalanceTotal = document.querySelector(".future-balance");
 const calendarError2 = document.querySelector(".calendar-error-2");
-// const calendarError1 = document.querySelector(".calendar-error")
 const bookingContainer = document.querySelector(".book-a-room-feature-image-container")
-// const roomTypeBtn = document.querySelector(".roomTypeBtn")
+const roomTypeBtn1 = document.querySelector(".roomTypeBtn")
 const bookRoomLeftGrid = document.querySelector(".book-a-room-left-side-grid")
-// const bookingError = document.querySelector(".book-a-room-main-container-upper-wrapper")
 const bookingStatus = document.querySelector(".need-to-login-error")
-// const bookRoomBtn = document.querySelector(".bookRoomBtn")
 const toLoginBtn = document.querySelector(".loginBtn")
 const userNameInput = document.querySelector(".userName")
 const passWordInput = document.querySelector(".passWord")
+const refreshSearchBtn = document.querySelector(".refresh-search-btn")
+const bookRoomGrid = document.querySelector(".b-head-grid")
+const availableRoomInfo =  document.querySelector(".ul")
+const invalidLoginError = document.querySelector (".invalid-login-error")
+
 
 // ~~~~~~~~~~~~~~~~~~~~~Event Listeners~~~~~~~~~~~~~~~~~~~~~~
 
 window.addEventListener('load', getData);
-// navText.addEventListener('click', redirect);
 loginBtn.addEventListener(`click`, goToLoginPage);
 toLoginFromBook.addEventListener(`click`, goToLoginPage);
 redirectText.addEventListener('click', backToHome);
 toHomeFromBook.addEventListener('click', backToHome);
-backHome.addEventListener('click', backToHomeFromLogin)
-bookARoomNav.addEventListener('click', goToBookARoom)
-bookARoomFooter.addEventListener('click', goToBookARoom)
-searchCalendar.addEventListener("click", searchForRoom)
-bookingContainer.addEventListener("click", filterRoomsByType)
-toLoginBtn.addEventListener("click", loginByUserName)
+backHome.addEventListener('click', backToHomeFromLogin);
+bookARoomNav.addEventListener('click', goToBookARoom);
+bookARoomFooter.addEventListener('click', goToBookARoom);
+searchCalendar.addEventListener("click", searchForRoom);
+bookingContainer.addEventListener("click", filterRoomsByType);
+toLoginBtn.addEventListener("click", loginByUserName);
+refreshSearchBtn.addEventListener("click", refreshSearch);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~Global Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,9 +76,6 @@ let hotel;
 let currentDate;
 let allRoomsData;
 let addBooking;
-
-
-
 
 
 
@@ -110,6 +98,10 @@ let addBooking;
   function loadData(){
     console.log(`roomData`, allRoomsData)
     hotel = new Hotel(currentDate, allRoomsData, bookingData,  customerData);
+    loadCustomerData();
+  };
+
+  function loadCustomerData(){
     updateCustomerWelcome();
     showPastBookings();
     showUpcomingBookings();
@@ -117,12 +109,9 @@ let addBooking;
     displayFutureBalance();
   };
 
-  // function redirect(){
-  //  hide(mainContainer);
-  //  show(redirectContainer);
-  // };
 
   function backToHome(){
+   hide(loginPage);
    hide(bookARoomPage);
    hide(redirectContainer);
    show(mainContainer);
@@ -146,7 +135,6 @@ let addBooking;
     hide(mainContainer);
     hide(loginPage);
     show(bookARoomPage);
-    hide(footer);
   };
 
   function signIn(){
@@ -158,10 +146,10 @@ let addBooking;
 
   function updateCustomerWelcome() {
     welcomeMessage.innerHTML = '';
-    let customerName = document.createElement('h5')
+    let customerName = document.createElement('h4')
     customerName.innerHTML = `Welcome, <b> ${customer.name}!`;
     welcomeMessage.appendChild(customerName)  
-  }
+  };
 
 
 function showPastBookings(){
@@ -169,7 +157,7 @@ function showPastBookings(){
   customer.allBookingsTotal()
     pastTrips.innerHTML = '';
     customer.pastBookings.forEach(booking => {
-       let pastTrip = document.createElement('h4')
+       let pastTrip = document.createElement('h5')
        pastTrip.innerText = booking.date
        pastTrips.appendChild(pastTrip)
       });
@@ -181,7 +169,7 @@ function showUpcomingBookings(){
   customer.allBookingsTotal()
   futureTrips.innerHTML = '';
    customer.upcomingBookings.forEach(booking => {
-       let upcomingTrip = document.createElement('h4')
+       let upcomingTrip = document.createElement('h5')
        upcomingTrip.innerText = booking.date
        futureTrips.appendChild(upcomingTrip)
       });
@@ -190,7 +178,7 @@ function showUpcomingBookings(){
 function displayPoints (){
   customer.calculatePointsEarned()
   totalPoints.innerHTML = '';
-  let allPoints = document.createElement('h4')
+  let allPoints = document.createElement('h5')
   allPoints.innerText = customer.pointsEarned.toFixed(0)
   totalPoints.appendChild(allPoints)
 };
@@ -198,7 +186,7 @@ function displayPoints (){
 function displayFutureBalance(){
   customer.calculateFutureBalance()
   futureBalanceTotal.innerHTML = '';
-  let futureBalance = document.createElement('h4')
+  let futureBalance = document.createElement('h5')
   futureBalance.innerText = `$${customer.futureBalance.toFixed(0)}`
   futureBalanceTotal.appendChild(futureBalance)
 };
@@ -227,8 +215,7 @@ function displayFutureBalance(){
       button.innerText = roomType
       bookingContainer.appendChild(button)
     })
-  }
-
+  };
 
 
   function filterRoomsByType(event){
@@ -249,14 +236,12 @@ function displayFutureBalance(){
       bookRoomBtn.classList.add('bookRoomBtn')
       bookRoomBtn.addEventListener("click", bookARoom)
       newArticle.classList.add('b-head-grid')
-      newArticle.innerText = `Room Number:${room.number} Room Type: ${room.roomType}  Has a:${room.bidet}  Bed Size: ${room.bedSize} Number of Beds: ${room.numBeds} Price per Night: ${room.costPerNight}`
+      newArticle.innerHTML = `<ul> <h5>Room Number:${room.number}</h5><li>Room Type: ${room.roomType}</li> <li> Has a Bidet:${room.bidet}</li> <li> Bed Size: ${room.bedSize}</li><li> Number of Beds: ${room.numBeds}</li><li> Price per Night: ${room.costPerNight}</li>`
       newArticle.appendChild(bookRoomBtn) 
       bookRoomLeftGrid.appendChild(newArticle)
        
         })
-   
   };
-
 
   function bookARoom(event){
     let calendarInput = calendar.value.split("-").join("/");
@@ -276,24 +261,33 @@ function displayFutureBalance(){
       }
   };
 
+  function refreshSearch() {
+    hide(calendarError2);
+    hide(bookingStatus);
+    hide(roomTypeBtn1);
+    hide(bookRoomGrid);
+    hide(availableRoomInfo);
+  };
 
 
-  function loginByUserName(){
+
+  function loginByUserName(e){
+    hide(invalidLoginError);
+    e.preventDefault();
     if(hotel.checkValidLoginData(userNameInput.value, passWordInput.value)){
-      customer = hotel.findCurrentUser(userName.value)
+      customer = hotel.findCurrentUser(userNameInput.value)
       customer.getCustomerBookings(hotel.bookings, hotel.rooms)
       console.log(`customer`, customer)
+      loadCustomerData();
+      backToHome();
+    } else {
+      show(invalidLoginError)
     }
-    // toLoginBtn
+    userNameInput.value = ``
+    passWordInput.value = `` 
   };
 
-  function deleteUpcomingReservation(){
-
-  };
-
-  function createNewUserName(){
-
-  };
+ 
 
 
 
@@ -301,52 +295,6 @@ function displayFutureBalance(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~Possible redirect~~~~~~~~~~~~~~~~~~~~~~
-// const handleRedirect = () => {
-//   const navText = document.querySelector("nav-text");
-  
-// navText.addEventListener("click", function() {
-//   throw Error("Can't touch this button!");
-// });
-//   try {
-//     Block of code to try
-//   }
-//   catch(err) {
-//     Block of code to handle errors
-//   }
-// }
-
-
-// app.use(function(req, res, next){
-//   res.status(404);
-
-//   // respond with html page
-//   if (req.accepts('html')) {
-//     res.render('404', { url: req.url });
-//     return;
-//   }
-
-//   // respond with json
-//   if (req.accepts('json')) {
-//     res.send({ error: 'Not found' });
-//     return;
-//   }
-
-//   // default to plain-text. send()
-//   res.type('txt').send('Not found');
-// });
 
 
 
@@ -424,6 +372,8 @@ function hide(element) {
   function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
   }
+
+ 
 
 let promise = new Promise((resolve, reject) => {
     let a = 1 + 1
