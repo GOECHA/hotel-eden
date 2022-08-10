@@ -98,7 +98,7 @@ let addBooking;
     getAllData.then((data) => {
       console.log('data', data)
     customerData = data[0].customers.map(customer => new Customer(customer));
-    // customer = new Customer(customerData[Math.floor(Math.random() * 41)]);
+    customer = new Customer(customerData[Math.floor(Math.random() * 41)]);
     allRoomsData = data[1].rooms.map(room => new Room(room));
     bookingData = data[2].bookings.map(booking => new Booking(booking));
     addBooking = data[3];
@@ -110,11 +110,11 @@ let addBooking;
   function loadData(){
     console.log(`roomData`, allRoomsData)
     hotel = new Hotel(currentDate, allRoomsData, bookingData,  customerData);
-    // updateCustomerWelcome();
-    // showPastBookings();
-    // showUpcomingBookings();
-    // displayPoints();
-    // displayFutureBalance();
+    updateCustomerWelcome();
+    showPastBookings();
+    showUpcomingBookings();
+    displayPoints();
+    displayFutureBalance();
   };
 
   // function redirect(){
