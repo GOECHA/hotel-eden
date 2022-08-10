@@ -150,8 +150,8 @@ let addBooking;
 
   function updateCustomerWelcome() {
     welcomeMessage.innerHTML = '';
-    let customerName = document.createElement('h4')
-    customerName.innerHTML = `Welcome, <b> ${customer.name}!`;
+    let customerName = document.createElement('h2')
+    customerName.innerHTML = `Welcome,     ${customer.name}!`;
     welcomeMessage.appendChild(customerName)  
   };
 
@@ -161,7 +161,7 @@ let addBooking;
     customer.allBookingsTotal()
     pastTrips.innerHTML = '';
     customer.pastBookings.forEach(booking => {
-      let pastTrip = document.createElement('h5')
+      let pastTrip = document.createElement('p')
       pastTrip.innerText = booking.date
       pastTrips.appendChild(pastTrip)
       });
@@ -173,7 +173,7 @@ let addBooking;
       customer.allBookingsTotal()
       futureTrips.innerHTML = '';
       customer.upcomingBookings.forEach(booking => {
-          let upcomingTrip = document.createElement('h5')
+          let upcomingTrip = document.createElement('p')
           upcomingTrip.innerText = booking.date
           futureTrips.appendChild(upcomingTrip)
           });
@@ -182,7 +182,7 @@ let addBooking;
     function displayPoints (){
       customer.calculatePointsEarned()
       totalPoints.innerHTML = '';
-      let allPoints = document.createElement('h5')
+      let allPoints = document.createElement('p')
       allPoints.innerText = customer.pointsEarned.toFixed(0)
       totalPoints.appendChild(allPoints)
     };
@@ -190,7 +190,7 @@ let addBooking;
     function displayFutureBalance(){
       customer.calculateFutureBalance()
       futureBalanceTotal.innerHTML = '';
-      let futureBalance = document.createElement('h5')
+      let futureBalance = document.createElement('p')
       futureBalance.innerText = `$${customer.futureBalance.toFixed(0)}`
       futureBalanceTotal.appendChild(futureBalance)
     };
