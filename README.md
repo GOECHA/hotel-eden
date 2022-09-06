@@ -43,7 +43,7 @@ A project built with JavaScript and Test Driven Development. This project holds 
 
 
 
-##Technologies
+## Technologies
 - the fetch API to retrieve and add data
 - Mocha and Chai for testing your code
 - JavaScript
