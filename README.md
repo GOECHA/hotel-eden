@@ -1,15 +1,17 @@
 
-#hotel-eden
+# hotel-eden
 
 
 Chantal Goethals 
 
-- [GitHub Chantal Goethals](https://github.com/GOECHA)
-- [linkedIn Chantal Goethals](https://www.linkedin.com/in/chantalgoethalsgoecha/)
+- [Chantal Goethals](https://github.com/GOECHA) | [linkedIn](https://www.linkedin.com/in/chantalgoethalsgoecha/)
 
 
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
 
-A project with beautiful UI and makes reservations. Accepts login credentials. 
+A project built with JavaScript and Test Driven Development. This project holds beautiful UI and allows a user to login with credentials and make hotel reservataions. The app stores information about past & future reservations and keeps a tab on much the user has spent with a "points earned" system.
 
 
 
