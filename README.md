@@ -10,6 +10,8 @@ Chantal Goethals
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
+<img alt="chai" src="https://user-images.githubusercontent.com/102189342/188754783-a7e4d05f-65c6-4d17-a3ff-235682441d54.png" width="30px">
+<img alt="mocha-2" src="https://user-images.githubusercontent.com/102189342/188754796-29493e26-2e3b-4757-a428-d9e690357ed0.svg" width="30px">
 
 A project built with JavaScript and Test Driven Development. This project holds beautiful UI and allows a user to login with credentials and make hotel reservataions. The app stores information about past & future reservations and keeps a tab on much the user has spent with a "points earned" system.
 
